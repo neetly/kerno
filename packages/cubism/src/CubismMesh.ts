@@ -4,6 +4,8 @@ import { CubismCoreUtils } from "@kerno/cubism-core";
 import { CubismBlendMode } from "./CubismBlendMode";
 
 class CubismMesh {
+  readonly maskMeshes: CubismMesh[] = [];
+
   constructor(
     private readonly drawables: CubismCoreDrawables,
     private readonly index: number,
@@ -32,6 +34,14 @@ class CubismMesh {
     }
   }
 
+  private get constantFlags() {
+    return this.drawables.constantFlags[this.index]!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+  }
+
+  private get dynamicFlags() {
+    return this.drawables.dynamicFlags[this.index]!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+  }
+
   get renderOrder() {
     return this.drawables.renderOrders[this.index]!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
   }
@@ -52,12 +62,8 @@ class CubismMesh {
     return this.drawables.vertexUvs[this.index]!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
   }
 
-  private get constantFlags() {
-    return this.drawables.constantFlags[this.index]!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
-  }
-
-  private get dynamicFlags() {
-    return this.drawables.dynamicFlags[this.index]!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+  get maskMeshIndices() {
+    return this.drawables.masks[this.index]!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
   }
 }
 

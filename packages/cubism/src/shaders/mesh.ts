@@ -2,12 +2,12 @@ const vertexShaderSource = `
 #version 300 es
 
 uniform mat4 uMatrix;
-in vec4 aVertexPosition;
+in vec4 aPosition;
 in vec2 aTextureCoord;
 out vec2 vTextureCoord;
 
 void main() {
-  gl_Position = uMatrix * aVertexPosition;
+  gl_Position = uMatrix * aPosition;
   vTextureCoord = aTextureCoord;
 }
 `.trim();

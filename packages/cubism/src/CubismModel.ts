@@ -35,6 +35,14 @@ class CubismModel {
       meshes.push(new CubismMesh(this.core.drawables, index));
     }
     this.meshes = meshes;
+
+    for (const mesh of this.meshes) {
+      for (const index of mesh.maskMeshIndices) {
+        if (index !== -1) {
+          mesh.maskMeshes.push(this.meshes[index]!); // eslint-disable-line @typescript-eslint/no-non-null-assertion
+        }
+      }
+    }
   }
 
   update() {

@@ -1626,7 +1626,9 @@ __metadata:
   dependencies:
     "@kerno/cubism-core": "workspace:^"
     "@neetly/tsconfig": "npm:^0.2.0"
+    "@types/three": "npm:^0.148.1"
     buncho: "npm:^6.0.4"
+    three: "npm:^0.148.0"
     typescript: "npm:^4.9.4"
   languageName: unknown
   linkType: soft
@@ -2154,6 +2156,22 @@ __metadata:
   dependencies:
     "@types/node": "npm:*"
   checksum: 5b500c1e863338b89b77f5c553a82f895f1273a2873905b7a8424d018bc9b2480064e081be13a9c533b359ed800a6de3f2b70330c820b716f76f6ce288d9ae76
+  languageName: node
+  linkType: hard
+
+"@types/three@npm:^0.148.1":
+  version: 0.148.1
+  resolution: "@types/three@npm:0.148.1"
+  dependencies:
+    "@types/webxr": "npm:*"
+  checksum: 8bb3ad2d368f4a2d7ceb0b01bf98b97bb13edb7886dae8b098546eb8068efccc77b9feb95ee8df3533ec51d9e6d376be8b4e0e1470665e855643200920356fa3
+  languageName: node
+  linkType: hard
+
+"@types/webxr@npm:*":
+  version: 0.5.1
+  resolution: "@types/webxr@npm:0.5.1"
+  checksum: 2cf32a7fc9aaa73603a5ee1576704bfed996152bd0affa40a618e5531afab00a9da1e8dde551bf4a55783887279cecaa47f15c4fdb70ab6cd69a0df106c53300
   languageName: node
   linkType: hard
 
@@ -8458,6 +8476,13 @@ __metadata:
   version: 0.2.0
   resolution: "text-table@npm:0.2.0"
   checksum: 65e9ab9cd26946c5378cd4b8782562f47e017bad4fe8d398356380fdc762d08b177ca6a1c5c8deac14fbe974c46cd09c0cbb86560545cfa49800f3fcacb0c952
+  languageName: node
+  linkType: hard
+
+"three@npm:^0.148.0":
+  version: 0.148.0
+  resolution: "three@npm:0.148.0"
+  checksum: 9cc20c26cc5821715b15f17e4a15d8f2dbee03470941eb0965e3595a9d813f9d34b8e32bb3aa6bc87cc298ba7000dadd9527fae03c5be3c9ba8747def9f5bfbd
   languageName: node
   linkType: hard
 
