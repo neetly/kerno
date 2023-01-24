@@ -1593,6 +1593,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@kerno/cubism-core@workspace:packages/cubism-core":
+  version: 0.0.0-use.local
+  resolution: "@kerno/cubism-core@workspace:packages/cubism-core"
+  dependencies:
+    "@neetly/tsconfig": "npm:^0.2.0"
+    buncho: "npm:^6.0.4"
+    typescript: "npm:^4.9.4"
+  languageName: unknown
+  linkType: soft
+
 "@kerno/cubism@workspace:packages/cubism":
   version: 0.0.0-use.local
   resolution: "@kerno/cubism@workspace:packages/cubism"

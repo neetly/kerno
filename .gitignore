@@ -11,3 +11,12 @@
 /packages/*/LICENSE
 /websites/*/lib/
 /websites/*/build/
+
+# Third-Party
+
+/third-party/live2d-cubism-core/*
+!/third-party/live2d-cubism-core/LICENSE
+!/third-party/live2d-cubism-core/live2dcubismcore.d.ts
+/third-party/live2d-cubism-models/*
+!/third-party/live2d-cubism-models/LICENSE
+!/third-party/live2d-cubism-models/Hiyori/

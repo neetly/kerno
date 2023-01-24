@@ -1,0 +1,2 @@
+/third-party/live2d-cubism-core/live2dcubismcore.d.ts -diff
+/third-party/live2d-cubism-models/Hiyori/** -diff

@@ -11,3 +11,7 @@
 /packages/*/LICENSE
 /websites/*/lib/
 /websites/*/build/
+
+# Third-Party
+
+/third-party/
