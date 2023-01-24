@@ -1,4 +1,4 @@
-/// <reference types="live2d-cubism-core/live2dcubismcore" />
+import "live2d-cubism-core/live2dcubismcore";
 
 export const CubismCoreAlignofMoc = Live2DCubismCore.AlignofMoc;
 export const CubismCoreAlignofModel = Live2DCubismCore.AlignofModel;
