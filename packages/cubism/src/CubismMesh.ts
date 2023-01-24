@@ -32,6 +32,10 @@ class CubismMesh {
     }
   }
 
+  get renderOrder() {
+    return this.drawables.renderOrders[this.index]!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+  }
+
   get vertexIndices() {
     return this.drawables.indices[this.index]!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
   }
