@@ -6,6 +6,9 @@
     "build": "buncho library build",
     "clean": "buncho library clean"
   },
+  "dependencies": {
+    "@kerno/cubism-core": "workspace:^"
+  },
   "devDependencies": {
     "@neetly/tsconfig": "^0.2.0",
     "buncho": "^6.0.4",
