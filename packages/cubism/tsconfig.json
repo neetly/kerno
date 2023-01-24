@@ -8,5 +8,7 @@
     "outDir": "./lib",
 
     "types": ["buncho/env"]
-  }
+  },
+
+  "references": [{ "path": "../cubism-core" }]
 }
