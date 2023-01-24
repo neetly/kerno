@@ -1,0 +1,14 @@
+{
+  "name": "@kerno/cubism",
+  "private": true,
+  "main": "./lib/index.js",
+  "scripts": {
+    "build": "buncho library build",
+    "clean": "buncho library clean"
+  },
+  "devDependencies": {
+    "@neetly/tsconfig": "^0.2.0",
+    "buncho": "^6.0.4",
+    "typescript": "^4.9.4"
+  }
+}

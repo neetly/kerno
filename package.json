@@ -1,0 +1,23 @@
+{
+  "name": "@kerno/repo",
+  "private": true,
+  "workspaces": [
+    "./packages/*",
+    "./websites/*"
+  ],
+  "scripts": {
+    "build": "yarn workspaces foreach --topological-dev run build",
+    "clean": "yarn workspaces foreach --topological-dev run clean",
+    "lint": "eslint --max-warnings 0 . && prettier --check .",
+    "lint:fix": "eslint --max-warnings 0 --fix . && prettier --write ."
+  },
+  "devDependencies": {
+    "@neetly/eslint-config": "^0.4.0",
+    "@neetly/tsconfig": "^0.2.0",
+    "@prettier/plugin-xml": "^2.2.0",
+    "eslint": "^8.32.0",
+    "prettier": "^2.8.3",
+    "typescript": "^4.9.4"
+  },
+  "packageManager": "yarn@4.0.0-rc.36"
+}
