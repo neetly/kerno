@@ -10,7 +10,7 @@ void main() {
   gl_Position = uMatrix * aPosition;
   vTextureCoord = aTextureCoord;
 }
-`.trim();
+`;
 
 const fragmentShaderSource = `
 #version 300 es
@@ -24,6 +24,6 @@ out vec4 fragmentColor;
 void main() {
   fragmentColor = texture(uTexture, vTextureCoord) * uOpacity;
 }
-`.trim();
+`;
 
 export { fragmentShaderSource, vertexShaderSource };
