@@ -26,7 +26,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/cli@npm:^7.19.3":
+"@babel/cli@npm:^7.20.7":
   version: 7.20.7
   resolution: "@babel/cli@npm:7.20.7"
   dependencies:
@@ -69,7 +69,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.11.6, @babel/core@npm:^7.12.10, @babel/core@npm:^7.12.3, @babel/core@npm:^7.13.16, @babel/core@npm:^7.20.2, @babel/core@npm:^7.20.5, @babel/core@npm:^7.7.5":
+"@babel/core@npm:^7.11.6, @babel/core@npm:^7.12.10, @babel/core@npm:^7.12.3, @babel/core@npm:^7.13.16, @babel/core@npm:^7.20.12, @babel/core@npm:^7.20.2, @babel/core@npm:^7.20.5, @babel/core@npm:^7.7.5":
   version: 7.20.12
   resolution: "@babel/core@npm:7.20.12"
   dependencies:
@@ -1515,9 +1515,40 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@buncho/webpack-env@npm:6.0.4":
-  version: 6.0.4
-  resolution: "@buncho/webpack-env@npm:6.0.4"
+"@buncho/webpack-config@npm:6.0.5":
+  version: 6.0.5
+  resolution: "@buncho/webpack-config@npm:6.0.5"
+  dependencies:
+    "@babel/core": "npm:^7.20.12"
+    "@neetly/babel-preset": "npm:^0.2.2"
+    "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.5.10"
+    "@types/mime-types": "npm:^2.1.1"
+    autoprefixer: "npm:^10.4.13"
+    babel-loader: "npm:^9.1.2"
+    css-loader: "npm:^6.7.3"
+    css-minimizer-webpack-plugin: "npm:^4.2.2"
+    mime-types: "npm:^2.1.35"
+    mini-css-extract-plugin: "npm:^2.7.2"
+    postcss: "npm:^8.4.21"
+    postcss-loader: "npm:^7.0.2"
+    project-references-webpack-plugin: "npm:^0.1.4"
+    react-refresh: "npm:^0.14.0"
+    resolve-url-loader: "npm:^5.0.0"
+    sass: "npm:^1.57.1"
+    sass-loader: "npm:^13.2.0"
+  peerDependencies:
+    webpack: "*"
+    webpack-dev-server: "*"
+  peerDependenciesMeta:
+    webpack-dev-server:
+      optional: true
+  checksum: 866dff8819f8f16704018fddc0830e1e71b28fd74c26ff6380d548537f0cc50ad0c17358e8097f69e203414c6c6cd5d87b58f6660a159378c69d4618748aa4a5
+  languageName: node
+  linkType: hard
+
+"@buncho/webpack-env@npm:6.0.5":
+  version: 6.0.5
+  resolution: "@buncho/webpack-env@npm:6.0.5"
   peerDependencies:
     "@types/react": "*"
     "@types/react-dom": "*"
@@ -1526,7 +1557,7 @@ __metadata:
       optional: true
     "@types/react-dom":
       optional: true
-  checksum: c914290106e025bb244565cb31de2f43dc39729f5d821754b940e9b4d7672aee703dbd16e1ddc240d0bad273a92b78a6cf92ca77e7e6938de4013649f832248d
+  checksum: 601103b78ac9003585fba460e941007e4eb2da6cf0e72cdb3eb8f2e50effbaa5c8ff2f00ca20b2f2e6618913d2506f7dea96c105782f9b83f7b0bd7f9e511402
   languageName: node
   linkType: hard
 
@@ -1794,15 +1825,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/schemas@npm:^29.0.0":
-  version: 29.0.0
-  resolution: "@jest/schemas@npm:29.0.0"
-  dependencies:
-    "@sinclair/typebox": "npm:^0.24.1"
-  checksum: 174f589fa0326e4f393cf56ac45beb8412e2ccd7c6040b45062035d80c95f5ae71512dab5757906b923ebfcd9c2b57ea40986377e0c06ad10ab2e24b561ac28d
-  languageName: node
-  linkType: hard
-
 "@jest/schemas@npm:^29.4.0":
   version: 29.4.0
   resolution: "@jest/schemas@npm:29.4.0"
@@ -1832,20 +1854,6 @@ __metadata:
     slash: "npm:^3.0.0"
     write-file-atomic: "npm:^5.0.0"
   checksum: 9dd18842c1162e7631ed39a65bb81afe85221f83b7c1b358453885d6d0402823105f83b9e0a2c21aa185eb91f1939dea98d5a2bd9433f073d618afa7688c6816
-  languageName: node
-  linkType: hard
-
-"@jest/types@npm:^29.3.1":
-  version: 29.3.1
-  resolution: "@jest/types@npm:29.3.1"
-  dependencies:
-    "@jest/schemas": "npm:^29.0.0"
-    "@types/istanbul-lib-coverage": "npm:^2.0.0"
-    "@types/istanbul-reports": "npm:^3.0.0"
-    "@types/node": "npm:*"
-    "@types/yargs": "npm:^17.0.8"
-    chalk: "npm:^4.0.0"
-  checksum: d22f39799b4a6e2e152f31dc9c9969b1581ac6561dd49cf22c63dc705d76976b338b2f431dc4e636419fd518f79f391878360741bc14bb452b8739bb45f7253d
   languageName: node
   linkType: hard
 
@@ -1932,7 +1940,7 @@ __metadata:
     "@neetly/tsconfig": "npm:^0.2.0"
     "@types/react": "npm:^18.0.27"
     "@types/react-dom": "npm:^18.0.10"
-    buncho: "npm:^6.0.4"
+    buncho: "npm:^6.0.5"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     typescript: "npm:^4.9.4"
@@ -1945,7 +1953,7 @@ __metadata:
   dependencies:
     "@neetly/codegen-utils": "npm:^0.1.0"
     "@neetly/tsconfig": "npm:^0.2.0"
-    buncho: "npm:^6.0.4"
+    buncho: "npm:^6.0.5"
     live2d-cubism-core: "link:../../third-party/live2d-cubism-core"
     prettier: "npm:^2.8.3"
     typescript: "npm:^4.9.4"
@@ -1959,7 +1967,7 @@ __metadata:
     "@kerno/cubism-core": "workspace:^"
     "@neetly/tsconfig": "npm:^0.2.0"
     "@types/three": "npm:^0.148.1"
-    buncho: "npm:^6.0.4"
+    buncho: "npm:^6.0.5"
     three: "npm:^0.148.0"
     typescript: "npm:^4.9.4"
   languageName: unknown
@@ -1979,7 +1987,7 @@ __metadata:
     "@storybook/react-webpack5": "npm:7.0.0-beta.33"
     "@types/react": "npm:^18.0.27"
     "@types/react-dom": "npm:^18.0.10"
-    buncho: "npm:^6.0.4"
+    buncho: "npm:^6.0.5"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     storybook: "npm:7.0.0-beta.33"
@@ -2289,13 +2297,6 @@ __metadata:
   version: 1.2.0
   resolution: "@rushstack/eslint-patch@npm:1.2.0"
   checksum: f91904a54e780bf2bb7644fb6d9bfcbf49ec92910c9aa3a3c7ba33f975e8c102a191d2bd18e49b41abdb13f5e5f6d54756299145e87ee073a93d111b9519ba1b
-  languageName: node
-  linkType: hard
-
-"@sinclair/typebox@npm:^0.24.1":
-  version: 0.24.51
-  resolution: "@sinclair/typebox@npm:0.24.51"
-  checksum: 57177ef84d72f5291b97a845450311b0e2dad0a9a96e1254668e98f27fe083eed7f175543ebd0486bf8e2bed0a5b8be931bdb255158f6cafbd597ff83030c676
   languageName: node
   linkType: hard
 
@@ -4616,7 +4617,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-loader@npm:^9.0.0, babel-loader@npm:^9.1.0":
+"babel-loader@npm:^9.0.0, babel-loader@npm:^9.1.0, babel-loader@npm:^9.1.2":
   version: 9.1.2
   resolution: "babel-loader@npm:9.1.2"
   dependencies:
@@ -4923,19 +4924,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"buncho@npm:^6.0.4":
-  version: 6.0.4
-  resolution: "buncho@npm:6.0.4"
+"buncho@npm:^6.0.5":
+  version: 6.0.5
+  resolution: "buncho@npm:6.0.5"
   dependencies:
-    "@babel/cli": "npm:^7.19.3"
-    "@babel/core": "npm:^7.20.5"
-    "@buncho/webpack-config": "npm:6.0.4"
-    "@buncho/webpack-env": "npm:6.0.4"
+    "@babel/cli": "npm:^7.20.7"
+    "@babel/core": "npm:^7.20.12"
+    "@buncho/webpack-config": "npm:6.0.5"
+    "@buncho/webpack-env": "npm:6.0.5"
     "@neetly/babel-preset": "npm:^0.2.2"
     clipanion: "npm:3.2.0-rc.14"
     copy-webpack-plugin: "npm:^11.0.0"
     dotenv: "npm:^16.0.3"
-    dotenv-expand: "npm:^9.0.0"
+    dotenv-expand: "npm:^10.0.0"
     html-webpack-plugin: "npm:^5.5.0"
     webpack: "npm:^5.75.0"
     webpack-cli: "npm:^5.0.1"
@@ -4958,7 +4959,7 @@ __metadata:
       optional: true
   bin:
     buncho: ./bin/buncho.js
-  checksum: b37c60a008c97c7d1c7f7db79a747688ef528f834598d972b014aecfb4f4578397949fea632278a48c583bfeb1a14851322a80d69c71b064ac86fec6716bddd0
+  checksum: 88cfb24b307d0c58a4e3b45227f17b63c4954b4fd9d2dccc60d8f2a53e5f3bc8fb5883716906455a522f9780e02033d2cbab0259cc380a398fc3517daabc2fc2
   languageName: node
   linkType: hard
 
@@ -5599,7 +5600,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-loader@npm:^6.7.1, css-loader@npm:^6.7.2":
+"css-loader@npm:^6.7.1, css-loader@npm:^6.7.2, css-loader@npm:^6.7.3":
   version: 6.7.3
   resolution: "css-loader@npm:6.7.3"
   dependencies:
@@ -6117,17 +6118,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dotenv-expand@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "dotenv-expand@npm:10.0.0"
+  checksum: bbe61cc154763b3fc2ef5ec6422b357c8fea706932e4be585c6a8f3af2a1508f87f2badc4beb24af2913520580e754763c58769ddf667312476eb16a7c1bed34
+  languageName: node
+  linkType: hard
+
 "dotenv-expand@npm:^5.1.0":
   version: 5.1.0
   resolution: "dotenv-expand@npm:5.1.0"
   checksum: 45ac32cdf6e194ed587ffc87745d3bacc8a831b73d70fef5c4d86294b4eb2e441b745df8fc031df38f5772276ec0f4af74999f4ff5d4e48b1f98cab3b720f394
-  languageName: node
-  linkType: hard
-
-"dotenv-expand@npm:^9.0.0":
-  version: 9.0.0
-  resolution: "dotenv-expand@npm:9.0.0"
-  checksum: be5569f785d9eabe655beb947cce8bb39b45f7788cea09ad4f68157aea71addaf07f8e7f07cf1458d5504e76ffe65a4f7124f109a0315a766387d2039a499992
   languageName: node
   linkType: hard
 
@@ -8772,20 +8773,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-util@npm:^29.3.1":
-  version: 29.3.1
-  resolution: "jest-util@npm:29.3.1"
-  dependencies:
-    "@jest/types": "npm:^29.3.1"
-    "@types/node": "npm:*"
-    chalk: "npm:^4.0.0"
-    ci-info: "npm:^3.2.0"
-    graceful-fs: "npm:^4.2.9"
-    picomatch: "npm:^2.2.3"
-  checksum: c11f92ba490288788c921fcba2a173bf3a73c2573008faedaf227b8e42458816818753f228a3b5adcd52689c2086fb4e5b451db86a96bc673ae3c034a557cf7a
-  languageName: node
-  linkType: hard
-
 "jest-util@npm:^29.4.0":
   version: 29.4.0
   resolution: "jest-util@npm:29.4.0"
@@ -8811,19 +8798,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-worker@npm:^29.1.2":
-  version: 29.3.1
-  resolution: "jest-worker@npm:29.3.1"
-  dependencies:
-    "@types/node": "npm:*"
-    jest-util: "npm:^29.3.1"
-    merge-stream: "npm:^2.0.0"
-    supports-color: "npm:^8.0.0"
-  checksum: 14ea04ab9eacd9dd7b5b6245032d9c043c6bad907a76bbfe0f09b3dde93992631df10e3f6463578e38a88812ab7c6edec6e343c3aad0e5378e1063ccc04b96ac
-  languageName: node
-  linkType: hard
-
-"jest-worker@npm:^29.4.0":
+"jest-worker@npm:^29.1.2, jest-worker@npm:^29.4.0":
   version: 29.4.0
   resolution: "jest-worker@npm:29.4.0"
   dependencies:
@@ -10790,7 +10765,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.2.14, postcss@npm:^8.4.17, postcss@npm:^8.4.19":
+"postcss@npm:^8.2.14, postcss@npm:^8.4.17, postcss@npm:^8.4.19, postcss@npm:^8.4.21":
   version: 8.4.21
   resolution: "postcss@npm:8.4.21"
   dependencies:
@@ -11669,7 +11644,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.56.1":
+"sass@npm:^1.56.1, sass@npm:^1.57.1":
   version: 1.57.1
   resolution: "sass@npm:1.57.1"
   dependencies:

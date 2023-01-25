@@ -12,7 +12,7 @@
   "devDependencies": {
     "@neetly/codegen-utils": "^0.1.0",
     "@neetly/tsconfig": "^0.2.0",
-    "buncho": "^6.0.4",
+    "buncho": "^6.0.5",
     "prettier": "^2.8.3",
     "typescript": "^4.9.4"
   }
