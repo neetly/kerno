@@ -39,7 +39,7 @@ class CubismModelFactory {
 
   destroy() {
     this.moc.destroy();
-    this.textures.map((texture) => {
+    this.textures.forEach((texture) => {
       texture.destroy();
     });
   }

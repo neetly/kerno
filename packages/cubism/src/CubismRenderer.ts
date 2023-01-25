@@ -3,6 +3,7 @@ import { Matrix4 } from "three";
 import { CubismBlendMode } from "./CubismBlendMode";
 import type { CubismMesh } from "./CubismMesh";
 import type { CubismModel } from "./CubismModel";
+import { CubismRendererMaskTexture } from "./CubismRendererMaskTexture";
 import { CubismRendererMeshProgram } from "./CubismRendererMeshProgram";
 import { CubismRendererTexture } from "./CubismRendererTexture";
 
@@ -12,6 +13,10 @@ class CubismRenderer {
   private readonly positionBuffer: WebGLBuffer;
   private readonly textureCoordBuffer: WebGLBuffer;
   private readonly textures: readonly CubismRendererTexture[];
+  private readonly maskTextures: ReadonlyMap<
+    CubismMesh,
+    CubismRendererMaskTexture
+  >;
 
   private readonly matrix = new Matrix4();
   private readonly meshIndices: Int32Array;
@@ -24,20 +29,33 @@ class CubismRenderer {
     this.indexBuffer = this.gl.createBuffer()!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
     this.positionBuffer = this.gl.createBuffer()!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
     this.textureCoordBuffer = this.gl.createBuffer()!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+
     this.textures = this.model.textures.map((texture) => {
       return new CubismRendererTexture(this.gl, texture.imageBitmap);
     });
 
+    const maskTextures = new Map<CubismMesh, CubismRendererMaskTexture>();
+    for (const mesh of this.model.meshes) {
+      if (mesh.maskMeshes.length) {
+        maskTextures.set(mesh, new CubismRendererMaskTexture(this.gl));
+      }
+    }
+    this.maskTextures = maskTextures;
+
     this.meshIndices = new Int32Array(this.model.meshes.length);
   }
 
-  render() {
+  private *getSortedMeshes() {
     for (const [index, mesh] of this.model.meshes.entries()) {
       this.meshIndices[mesh.renderOrder] = index;
     }
-
     for (const index of this.meshIndices) {
-      const mesh = this.model.meshes[index]!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+      yield this.model.meshes[index]!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+    }
+  }
+
+  render() {
+    for (const mesh of this.getSortedMeshes()) {
       this.renderMesh(mesh, this.matrix);
     }
   }
@@ -62,38 +80,6 @@ class CubismRenderer {
       mesh,
       this.meshProgram.aPosition,
       this.meshProgram.aTextureCoord,
-    );
-  }
-
-  private drawMesh(mesh: CubismMesh, aPosition: number, aTextureCoord: number) {
-    this.gl.bindBuffer(this.gl.ELEMENT_ARRAY_BUFFER, this.indexBuffer);
-    this.gl.bufferData(
-      this.gl.ELEMENT_ARRAY_BUFFER,
-      mesh.vertexIndices,
-      this.gl.DYNAMIC_DRAW,
-    );
-
-    this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.positionBuffer);
-    this.gl.bufferData(
-      this.gl.ARRAY_BUFFER,
-      mesh.vertexPositions,
-      this.gl.DYNAMIC_DRAW,
-    );
-    this.gl.vertexAttribPointer(aPosition, 2, this.gl.FLOAT, false, 0, 0);
-
-    this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.textureCoordBuffer);
-    this.gl.bufferData(
-      this.gl.ARRAY_BUFFER,
-      mesh.textureCoords,
-      this.gl.DYNAMIC_DRAW,
-    );
-    this.gl.vertexAttribPointer(aTextureCoord, 2, this.gl.FLOAT, false, 0, 0);
-
-    this.gl.drawElements(
-      this.gl.TRIANGLES,
-      mesh.vertexIndices.length,
-      this.gl.UNSIGNED_SHORT,
-      0,
     );
   }
 
@@ -144,13 +130,48 @@ class CubismRenderer {
     this.gl.uniform1i(location, index);
   }
 
+  private drawMesh(mesh: CubismMesh, aPosition: number, aTextureCoord: number) {
+    this.gl.bindBuffer(this.gl.ELEMENT_ARRAY_BUFFER, this.indexBuffer);
+    this.gl.bufferData(
+      this.gl.ELEMENT_ARRAY_BUFFER,
+      mesh.vertexIndices,
+      this.gl.DYNAMIC_DRAW,
+    );
+
+    this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.positionBuffer);
+    this.gl.bufferData(
+      this.gl.ARRAY_BUFFER,
+      mesh.vertexPositions,
+      this.gl.DYNAMIC_DRAW,
+    );
+    this.gl.vertexAttribPointer(aPosition, 2, this.gl.FLOAT, false, 0, 0);
+
+    this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.textureCoordBuffer);
+    this.gl.bufferData(
+      this.gl.ARRAY_BUFFER,
+      mesh.textureCoords,
+      this.gl.DYNAMIC_DRAW,
+    );
+    this.gl.vertexAttribPointer(aTextureCoord, 2, this.gl.FLOAT, false, 0, 0);
+
+    this.gl.drawElements(
+      this.gl.TRIANGLES,
+      mesh.vertexIndices.length,
+      this.gl.UNSIGNED_SHORT,
+      0,
+    );
+  }
+
   destroy() {
     this.meshProgram.destroy();
     this.gl.deleteBuffer(this.indexBuffer);
     this.gl.deleteBuffer(this.positionBuffer);
     this.gl.deleteBuffer(this.textureCoordBuffer);
-    this.textures.map((texture) => {
+    this.textures.forEach((texture) => {
       texture.destroy();
+    });
+    this.maskTextures.forEach((maskTexture) => {
+      maskTexture.destroy();
     });
   }
 }
