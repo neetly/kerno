@@ -14,6 +14,7 @@ const createGLProgram = (
   const program = gl.createProgram()!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
   gl.attachShader(program, vertexShader);
   gl.attachShader(program, fragmentShader);
+  gl.linkProgram(program);
 
   gl.detachShader(program, vertexShader);
   gl.detachShader(program, fragmentShader);

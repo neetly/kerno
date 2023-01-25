@@ -1,4 +1,5 @@
 import { CubismCoreModel } from "@kerno/cubism-core";
+import { Box2, Vector2 } from "three";
 
 import { CubismMesh } from "./CubismMesh";
 import type { CubismModelMoc } from "./CubismModelMoc";
@@ -17,6 +18,8 @@ class CubismModel {
     return new CubismModel(core, textures);
   }
 
+  readonly unitSize: number;
+  readonly boundingBox: Box2;
   readonly parameters: ReadonlyMap<string, CubismParameter>;
   readonly meshes: readonly CubismMesh[];
 
@@ -24,6 +27,18 @@ class CubismModel {
     private readonly core: CubismCoreModel,
     readonly textures: readonly CubismModelTexture[],
   ) {
+    this.unitSize = this.core.canvasinfo.PixelsPerUnit;
+    this.boundingBox = new Box2(
+      new Vector2(
+        -this.core.canvasinfo.CanvasOriginX,
+        -this.core.canvasinfo.CanvasOriginY,
+      ),
+      new Vector2(
+        this.core.canvasinfo.CanvasWidth - this.core.canvasinfo.CanvasOriginX,
+        this.core.canvasinfo.CanvasHeight - this.core.canvasinfo.CanvasOriginY,
+      ),
+    );
+
     const parameters = new Map<string, CubismParameter>();
     for (let index = 0; index < this.core.parameters.count; index++) {
       const parameter = new CubismParameter(this.core.parameters, index);
@@ -44,6 +59,14 @@ class CubismModel {
         }
       }
     }
+  }
+
+  get width() {
+    return this.boundingBox.max.x - this.boundingBox.min.x;
+  }
+
+  get height() {
+    return this.boundingBox.max.y - this.boundingBox.min.y;
   }
 
   update() {

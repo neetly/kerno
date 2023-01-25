@@ -23,11 +23,12 @@ class CubismRenderer {
     CubismRendererMaskTexture
   >;
 
+  private readonly matrix = new Matrix4();
   private readonly meshIndices: Int32Array;
 
   constructor(
-    private readonly gl: WebGL2RenderingContext,
     private readonly model: CubismModel,
+    private readonly gl: WebGL2RenderingContext,
   ) {
     this.state = CubismRendererState.of(this.gl);
 
@@ -55,7 +56,11 @@ class CubismRenderer {
     this.state.setDefaultViewport(x, y, width, height);
   }
 
-  render(matrix: Matrix4) {
+  setMatrix(matrix: number[]) {
+    this.matrix.fromArray(matrix);
+  }
+
+  render() {
     for (const [mesh, maskTexture] of this.maskTextures) {
       this.renderMask(mesh, maskTexture);
     }
@@ -63,9 +68,9 @@ class CubismRenderer {
     for (const mesh of this.getSortedMeshes()) {
       if (mesh.hasMask) {
         const maskTexture = this.maskTextures.get(mesh)!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
-        this.renderMeshWithMask(mesh, maskTexture, matrix);
+        this.renderMeshWithMask(mesh, maskTexture, this.matrix);
       } else {
-        this.renderMesh(mesh, matrix);
+        this.renderMesh(mesh, this.matrix);
       }
     }
   }
