@@ -25,18 +25,9 @@ class PixiCubismView extends PixiContainer {
     renderer.batch.flush();
 
     this.cubismRenderer ??= new CubismRenderer(this.model, renderer.gl);
-    this.cubismRenderer.setDefaultViewport(
-      0,
-      0,
-      renderer.width,
-      renderer.height,
-    );
-    this.cubismRenderer.setMatrix(
-      this.getCubismRendererMatrix(
-        renderer.screen.width,
-        renderer.screen.height,
-      ),
-    );
+    this.cubismRenderer //
+      .setDefaultViewport(0, 0, renderer.width, renderer.height);
+    this.cubismRenderer.setMatrix(this.getCubismRendererMatrix(renderer));
 
     this.model.update();
     this.cubismRenderer.render();
@@ -44,13 +35,12 @@ class PixiCubismView extends PixiContainer {
     renderer.state.reset();
   }
 
-  private getCubismRendererMatrix(screenWidth: number, screenHeight: number) {
+  private getCubismRendererMatrix(renderer: Renderer) {
     matrix
       .identity()
       .scale(this.model.unitSize, -this.model.unitSize)
       .prepend(this.transform.worldTransform)
-      .scale(2 / screenWidth, -2 / screenHeight)
-      .translate(-1, 1);
+      .prepend(renderer.projection.projectionMatrix);
 
     const { a, b, c, d, tx, ty } = matrix;
 

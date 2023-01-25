@@ -1,19 +1,22 @@
-import { Matrix4 } from "three";
+import { type Box2, Matrix4 } from "three";
 
 import { CubismBlendMode } from "./CubismBlendMode";
 import type { CubismMesh } from "./CubismMesh";
 import type { CubismModel } from "./CubismModel";
 import { CubismRendererMaskTexture } from "./CubismRendererMaskTexture";
 import { CubismRendererMeshProgram } from "./CubismRendererMeshProgram";
+import { CubismRendererMeshWithMaskProgram } from "./CubismRendererMeshWithMaskProgram";
+import type { CubismRendererProgram } from "./CubismRendererProgram";
 import { CubismRendererState } from "./CubismRendererState";
 import { CubismRendererTexture } from "./CubismRendererTexture";
 
-const maskMetrix = new Matrix4();
+const maskMatrix = new Matrix4();
 
 class CubismRenderer {
   private readonly state: CubismRendererState;
 
   private readonly meshProgram: CubismRendererMeshProgram;
+  private readonly meshWithMaskProgram: CubismRendererMeshWithMaskProgram;
   private readonly indexBuffer: WebGLBuffer;
   private readonly positionBuffer: WebGLBuffer;
   private readonly textureCoordBuffer: WebGLBuffer;
@@ -33,6 +36,7 @@ class CubismRenderer {
     this.state = CubismRendererState.of(this.gl);
 
     this.meshProgram = new CubismRendererMeshProgram(this.gl);
+    this.meshWithMaskProgram = new CubismRendererMeshWithMaskProgram(this.gl);
     this.indexBuffer = this.gl.createBuffer()!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
     this.positionBuffer = this.gl.createBuffer()!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
     this.textureCoordBuffer = this.gl.createBuffer()!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
@@ -84,27 +88,21 @@ class CubismRenderer {
     }
   }
 
-  private renderMesh(mesh: CubismMesh, matrix: Matrix4, isMask = false) {
-    if (!isMask && !mesh.isVisible) {
+  private renderMesh(mesh: CubismMesh, matrix: Matrix4) {
+    if (!mesh.isVisible) {
       return;
     }
 
-    this.gl.useProgram(this.meshProgram.id);
-    this.gl.uniformMatrix4fv(this.meshProgram.uMatrix, false, matrix.elements);
-    this.gl.uniform1f(this.meshProgram.uOpacity, isMask ? 1 : mesh.opacity);
+    const program = this.meshProgram;
+    this.gl.useProgram(program.id);
+    this.gl.uniformMatrix4fv(program.uMatrix, false, matrix.elements);
+    this.gl.uniform1f(program.uOpacity, mesh.opacity);
     this.setIsCulling(mesh.isCulling);
-    this.setBlendMode(isMask ? CubismBlendMode.Normal : mesh.blendMode);
-    this.setTexture(
-      this.meshProgram.uTexture,
-      0,
-      this.textures[mesh.textureIndex]!.id, // eslint-disable-line @typescript-eslint/no-non-null-assertion
-    );
+    this.setBlendMode(mesh.blendMode);
+    const texture = this.textures[mesh.textureIndex]!.id; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+    this.setTexture(program.uTexture, 0, texture);
 
-    this.drawMesh(
-      mesh,
-      this.meshProgram.aPosition,
-      this.meshProgram.aTextureCoord,
-    );
+    this.drawMesh(mesh, program);
   }
 
   private renderMeshWithMask(
@@ -112,15 +110,49 @@ class CubismRenderer {
     maskTexture: CubismRendererMaskTexture,
     matrix: Matrix4,
   ) {
-    console.log(mesh, maskTexture, matrix);
+    if (!mesh.isVisible) {
+      return;
+    }
+
+    const program = this.meshWithMaskProgram;
+    this.gl.useProgram(program.id);
+    this.gl.uniformMatrix4fv(program.uMatrix, false, matrix.elements);
+    this.gl.uniform1f(program.uOpacity, mesh.opacity);
+    this.setIsCulling(mesh.isCulling);
+    this.setBlendMode(mesh.blendMode);
+    const texture = this.textures[mesh.textureIndex]!.id; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+    this.setTexture(program.uTexture, 0, texture);
+
+    maskMatrix.identity();
+    this.gl.uniformMatrix4fv(program.uMaskMatrix, false, maskMatrix.elements);
+    this.gl.uniform1f(program.uMaskCoeff, mesh.hasInvertedMask ? 1 : 0);
+    this.setTexture(program.uMaskTexture, 1, maskTexture.id);
+
+    this.drawMesh(mesh, program);
   }
 
   private renderMask(mesh: CubismMesh, maskTexture: CubismRendererMaskTexture) {
+    const maskBoundingBox = mesh.getMaskBoundingBox();
+    toOrthographic(maskMatrix, maskBoundingBox);
+
     maskTexture.render(() => {
       for (const maskMesh of mesh.maskMeshes) {
-        this.renderMesh(maskMesh, maskMetrix, true);
+        this.renderMaskMesh(maskMesh, maskMatrix);
       }
     });
+  }
+
+  private renderMaskMesh(mesh: CubismMesh, matrix: Matrix4) {
+    const program = this.meshProgram;
+    this.gl.useProgram(program.id);
+    this.gl.uniformMatrix4fv(program.uMatrix, false, matrix.elements);
+    this.gl.uniform1f(program.uOpacity, 1);
+    this.setIsCulling(mesh.isCulling);
+    this.setBlendMode(CubismBlendMode.Normal);
+    const texture = this.textures[mesh.textureIndex]!.id; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+    this.setTexture(program.uTexture, 0, texture);
+
+    this.drawMesh(mesh, program);
   }
 
   private setIsCulling(isCulling: boolean) {
@@ -170,7 +202,7 @@ class CubismRenderer {
     this.gl.uniform1i(location, index);
   }
 
-  private drawMesh(mesh: CubismMesh, aPosition: number, aTextureCoord: number) {
+  private drawMesh(mesh: CubismMesh, program: CubismRendererProgram) {
     this.gl.bindBuffer(this.gl.ELEMENT_ARRAY_BUFFER, this.indexBuffer);
     this.gl.bufferData(
       this.gl.ELEMENT_ARRAY_BUFFER,
@@ -184,7 +216,14 @@ class CubismRenderer {
       mesh.vertexPositions,
       this.gl.DYNAMIC_DRAW,
     );
-    this.gl.vertexAttribPointer(aPosition, 2, this.gl.FLOAT, false, 0, 0);
+    this.gl.vertexAttribPointer(
+      program.aPosition,
+      2,
+      this.gl.FLOAT,
+      false,
+      0,
+      0,
+    );
 
     this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.textureCoordBuffer);
     this.gl.bufferData(
@@ -192,7 +231,14 @@ class CubismRenderer {
       mesh.textureCoords,
       this.gl.DYNAMIC_DRAW,
     );
-    this.gl.vertexAttribPointer(aTextureCoord, 2, this.gl.FLOAT, false, 0, 0);
+    this.gl.vertexAttribPointer(
+      program.aTextureCoord,
+      2,
+      this.gl.FLOAT,
+      false,
+      0,
+      0,
+    );
 
     this.gl.drawElements(
       this.gl.TRIANGLES,
@@ -204,6 +250,7 @@ class CubismRenderer {
 
   destroy() {
     this.meshProgram.destroy();
+    this.meshWithMaskProgram.destroy();
     this.gl.deleteBuffer(this.indexBuffer);
     this.gl.deleteBuffer(this.positionBuffer);
     this.gl.deleteBuffer(this.textureCoordBuffer);
@@ -215,5 +262,16 @@ class CubismRenderer {
     });
   }
 }
+
+const toOrthographic = (matrix: Matrix4, boundingBox: Box2) => {
+  matrix.makeOrthographic(
+    boundingBox.min.x,
+    boundingBox.max.x,
+    boundingBox.max.y,
+    boundingBox.min.y,
+    1,
+    -1,
+  );
+};
 
 export { CubismRenderer };

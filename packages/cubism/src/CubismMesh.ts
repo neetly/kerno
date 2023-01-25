@@ -76,6 +76,12 @@ class CubismMesh {
     return this.maskMeshes.length !== 0;
   }
 
+  get hasInvertedMask() {
+    return (
+      this.hasMask && CubismCoreUtils.hasIsInvertedMaskBit(this.constantFlags)
+    );
+  }
+
   getBoundingBox() {
     if (!this.isBoundingBoxDirty) {
       return this.boundingBox;
