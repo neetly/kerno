@@ -4,7 +4,7 @@ import { Box2, Vector2 } from "three";
 
 import { CubismBlendMode } from "./CubismBlendMode";
 
-const vector2 = new Vector2();
+const point = new Vector2();
 
 class CubismMesh {
   readonly maskMeshes: CubismMesh[] = [];
@@ -73,6 +73,10 @@ class CubismMesh {
     return this.drawables.masks[this.index]!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
   }
 
+  get hasMask() {
+    return this.maskMeshes.length !== 0;
+  }
+
   getBoundingBox() {
     if (!this.isBoundingBoxDirty) {
       return this.boundingBox;
@@ -80,11 +84,11 @@ class CubismMesh {
 
     this.boundingBox.makeEmpty();
     for (let index = 0; index < this.vertexPositions.length; index += 2) {
-      vector2.set(
+      point.set(
         this.vertexPositions[index * 2]!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
         this.vertexPositions[index * 2 + 1]!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
       );
-      this.boundingBox.expandByPoint(vector2);
+      this.boundingBox.expandByPoint(point);
     }
     this.isBoundingBoxDirty = false;
 
@@ -93,8 +97,8 @@ class CubismMesh {
 
   getMaskBoundingBox() {
     this.maskBoundingBox.makeEmpty();
-    for (const mesh of this.maskMeshes) {
-      this.maskBoundingBox.union(mesh.getBoundingBox());
+    for (const maskMesh of this.maskMeshes) {
+      this.maskBoundingBox.union(maskMesh.getBoundingBox());
     }
     return this.maskBoundingBox;
   }

@@ -1,11 +1,17 @@
+import { CubismRendererState } from "./CubismRendererState";
+
 const WIDTH = 256;
 const HEIGHT = 256;
 
 class CubismRendererMaskTexture {
+  private readonly state: CubismRendererState;
+
   readonly id: WebGLTexture;
   private readonly framebuffer: WebGLFramebuffer;
 
   constructor(private readonly gl: WebGL2RenderingContext) {
+    this.state = CubismRendererState.of(this.gl);
+
     this.id = this.gl.createTexture()!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
     this.gl.bindTexture(this.gl.TEXTURE_2D, this.id);
     this.gl.texImage2D(
@@ -50,6 +56,19 @@ class CubismRendererMaskTexture {
       0,
     );
     this.gl.bindFramebuffer(this.gl.FRAMEBUFFER, null);
+  }
+
+  render(func: () => void) {
+    this.gl.bindFramebuffer(this.gl.FRAMEBUFFER, this.framebuffer);
+    this.gl.viewport(0, 0, WIDTH, HEIGHT);
+
+    this.gl.clearColor(0, 0, 0, 0);
+    this.gl.clear(this.gl.COLOR_BUFFER_BIT);
+
+    func();
+
+    this.gl.bindFramebuffer(this.gl.FRAMEBUFFER, null);
+    this.state.resetViewport();
   }
 
   destroy() {

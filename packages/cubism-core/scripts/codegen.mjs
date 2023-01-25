@@ -34,7 +34,7 @@ for (const node of ast.program.body[0].body.body) {
 await writeFile(
   "./src/index.ts",
   [
-    `import "live2d-cubism-core/live2dcubismcore";\n\n`,
+    `/// <reference types="live2d-cubism-core/live2dcubismcore" />\n\n`,
     ...Array.from(exports).map(([name, exportName]) => {
       return `export const ${exportName} = Live2DCubismCore.${name};\n`;
     }),

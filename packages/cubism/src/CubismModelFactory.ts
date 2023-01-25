@@ -25,6 +25,25 @@ class CubismModelFactory {
     return new CubismModelFactory(moc, textures);
   }
 
+  static async createFromURL({
+    fileName,
+    baseURL,
+  }: {
+    fileName: string;
+    baseURL: string | URL;
+  }) {
+    return CubismModelFactory.create({
+      fileName,
+      loadFileData: async (fileName) => {
+        const response = await fetch(new URL(fileName, baseURL));
+        if (!response.ok) {
+          throw new CubismError(`Cannot load file "${fileName}".`);
+        }
+        return response.arrayBuffer();
+      },
+    });
+  }
+
   private constructor(
     private readonly moc: CubismModelMoc,
     private readonly textures: readonly CubismModelTexture[],

@@ -5,9 +5,14 @@ import type { CubismMesh } from "./CubismMesh";
 import type { CubismModel } from "./CubismModel";
 import { CubismRendererMaskTexture } from "./CubismRendererMaskTexture";
 import { CubismRendererMeshProgram } from "./CubismRendererMeshProgram";
+import { CubismRendererState } from "./CubismRendererState";
 import { CubismRendererTexture } from "./CubismRendererTexture";
 
+const maskMetrix = new Matrix4();
+
 class CubismRenderer {
+  private readonly state: CubismRendererState;
+
   private readonly meshProgram: CubismRendererMeshProgram;
   private readonly indexBuffer: WebGLBuffer;
   private readonly positionBuffer: WebGLBuffer;
@@ -18,13 +23,14 @@ class CubismRenderer {
     CubismRendererMaskTexture
   >;
 
-  private readonly matrix = new Matrix4();
   private readonly meshIndices: Int32Array;
 
   constructor(
     private readonly gl: WebGL2RenderingContext,
     private readonly model: CubismModel,
   ) {
+    this.state = CubismRendererState.of(this.gl);
+
     this.meshProgram = new CubismRendererMeshProgram(this.gl);
     this.indexBuffer = this.gl.createBuffer()!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
     this.positionBuffer = this.gl.createBuffer()!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
@@ -36,7 +42,7 @@ class CubismRenderer {
 
     const maskTextures = new Map<CubismMesh, CubismRendererMaskTexture>();
     for (const mesh of this.model.meshes) {
-      if (mesh.maskMeshes.length) {
+      if (mesh.hasMask) {
         maskTextures.set(mesh, new CubismRendererMaskTexture(this.gl));
       }
     }
@@ -45,18 +51,31 @@ class CubismRenderer {
     this.meshIndices = new Int32Array(this.model.meshes.length);
   }
 
+  setDefaultViewport(x: number, y: number, width: number, height: number) {
+    this.state.setDefaultViewport(x, y, width, height);
+  }
+
+  render(matrix: Matrix4) {
+    for (const [mesh, maskTexture] of this.maskTextures) {
+      this.renderMask(mesh, maskTexture);
+    }
+
+    for (const mesh of this.getSortedMeshes()) {
+      if (mesh.hasMask) {
+        const maskTexture = this.maskTextures.get(mesh)!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+        this.renderMeshWithMask(mesh, maskTexture, matrix);
+      } else {
+        this.renderMesh(mesh, matrix);
+      }
+    }
+  }
+
   private *getSortedMeshes() {
     for (const [index, mesh] of this.model.meshes.entries()) {
       this.meshIndices[mesh.renderOrder] = index;
     }
     for (const index of this.meshIndices) {
       yield this.model.meshes[index]!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
-    }
-  }
-
-  render() {
-    for (const mesh of this.getSortedMeshes()) {
-      this.renderMesh(mesh, this.matrix);
     }
   }
 
@@ -81,6 +100,22 @@ class CubismRenderer {
       this.meshProgram.aPosition,
       this.meshProgram.aTextureCoord,
     );
+  }
+
+  private renderMeshWithMask(
+    mesh: CubismMesh,
+    maskTexture: CubismRendererMaskTexture,
+    matrix: Matrix4,
+  ) {
+    console.log(mesh, maskTexture, matrix);
+  }
+
+  private renderMask(mesh: CubismMesh, maskTexture: CubismRendererMaskTexture) {
+    maskTexture.render(() => {
+      for (const maskMesh of mesh.maskMeshes) {
+        this.renderMesh(maskMesh, maskMetrix, true);
+      }
+    });
   }
 
   private setIsCulling(isCulling: boolean) {
