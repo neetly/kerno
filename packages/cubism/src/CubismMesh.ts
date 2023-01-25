@@ -1,5 +1,4 @@
-import type { CubismCoreDrawables } from "@kerno/cubism-core";
-import { CubismCoreUtils } from "@kerno/cubism-core";
+import { type CubismCoreDrawables, CubismCoreUtils } from "@kerno/cubism-core";
 import { Box2, Vector2 } from "three";
 
 import { CubismBlendMode } from "./CubismBlendMode";
