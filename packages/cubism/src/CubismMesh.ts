@@ -1,10 +1,17 @@
 import type { CubismCoreDrawables } from "@kerno/cubism-core";
 import { CubismCoreUtils } from "@kerno/cubism-core";
+import { Box2, Vector2 } from "three";
 
 import { CubismBlendMode } from "./CubismBlendMode";
 
+const vector2 = new Vector2();
+
 class CubismMesh {
   readonly maskMeshes: CubismMesh[] = [];
+
+  private isBoundingBoxDirty = true;
+  private readonly boundingBox = new Box2();
+  private readonly maskBoundingBox = new Box2();
 
   constructor(
     private readonly drawables: CubismCoreDrawables,
@@ -64,6 +71,37 @@ class CubismMesh {
 
   get maskMeshIndices() {
     return this.drawables.masks[this.index]!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+  }
+
+  getBoundingBox() {
+    if (!this.isBoundingBoxDirty) {
+      return this.boundingBox;
+    }
+
+    this.boundingBox.makeEmpty();
+    for (let index = 0; index < this.vertexPositions.length; index += 2) {
+      vector2.set(
+        this.vertexPositions[index * 2]!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
+        this.vertexPositions[index * 2 + 1]!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
+      );
+      this.boundingBox.expandByPoint(vector2);
+    }
+    this.isBoundingBoxDirty = false;
+
+    return this.boundingBox;
+  }
+
+  getMaskBoundingBox() {
+    this.maskBoundingBox.makeEmpty();
+    for (const mesh of this.maskMeshes) {
+      this.maskBoundingBox.union(mesh.getBoundingBox());
+    }
+    return this.maskBoundingBox;
+  }
+
+  update() {
+    this.isBoundingBoxDirty ||= //
+      CubismCoreUtils.hasVertexPositionsDidChangeBit(this.dynamicFlags);
   }
 }
 

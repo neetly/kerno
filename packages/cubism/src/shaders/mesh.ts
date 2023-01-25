@@ -16,13 +16,13 @@ const fragmentShaderSource = `
 #version 300 es
 precision mediump float;
 
-uniform vec4 uBaseColor;
+uniform float uOpacity;
 uniform sampler2D uTexture;
 in vec2 vTextureCoord;
 out vec4 fragmentColor;
 
 void main() {
-  fragmentColor = texture(uTexture, vTextureCoord) * uBaseColor;
+  fragmentColor = texture(uTexture, vTextureCoord) * uOpacity;
 }
 `.trim();
 

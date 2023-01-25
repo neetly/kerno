@@ -17,16 +17,17 @@ class CubismModel {
     return new CubismModel(core, textures);
   }
 
-  readonly parameters: readonly CubismParameter[];
+  readonly parameters: ReadonlyMap<string, CubismParameter>;
   readonly meshes: readonly CubismMesh[];
 
   private constructor(
     private readonly core: CubismCoreModel,
     readonly textures: readonly CubismModelTexture[],
   ) {
-    const parameters: CubismParameter[] = [];
+    const parameters = new Map<string, CubismParameter>();
     for (let index = 0; index < this.core.parameters.count; index++) {
-      parameters.push(new CubismParameter(this.core.parameters, index));
+      const parameter = new CubismParameter(this.core.parameters, index);
+      parameters.set(parameter.name, parameter);
     }
     this.parameters = parameters;
 
@@ -46,7 +47,11 @@ class CubismModel {
   }
 
   update() {
+    this.core.drawables.resetDynamicFlags();
     this.core.update();
+    for (const mesh of this.meshes) {
+      mesh.update();
+    }
   }
 
   destroy() {

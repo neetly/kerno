@@ -4,7 +4,7 @@ import { createGLProgram } from "./utils/createGLProgram";
 class CubismRendererMeshProgram {
   readonly id: WebGLProgram;
   readonly uMatrix: WebGLUniformLocation;
-  readonly uBaseColor: WebGLUniformLocation;
+  readonly uOpacity: WebGLUniformLocation;
   readonly uTexture: WebGLUniformLocation;
   readonly aPosition: number;
   readonly aTextureCoord: number;
@@ -17,7 +17,7 @@ class CubismRendererMeshProgram {
     );
 
     this.uMatrix = this.gl.getUniformLocation(this.id, "uMatrix")!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
-    this.uBaseColor = this.gl.getUniformLocation(this.id, "uBaseColor")!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+    this.uOpacity = this.gl.getUniformLocation(this.id, "uOpacity")!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
     this.uTexture = this.gl.getUniformLocation(this.id, "uTexture")!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
     this.aPosition = this.gl.getAttribLocation(this.id, "aPosition");
     this.aTextureCoord = this.gl.getAttribLocation(this.id, "aTextureCoord");
