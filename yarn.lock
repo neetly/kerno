@@ -1937,7 +1937,7 @@ __metadata:
     "@neetly/tsconfig": "npm:^0.2.0"
     "@types/three": "npm:^0.148.1"
     buncho: "npm:^6.0.5"
-    three: "npm:^0.148.0"
+    three: "npm:^0.149.0"
     typescript: "npm:^4.9.4"
   languageName: unknown
   linkType: soft
@@ -12516,10 +12516,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"three@npm:^0.148.0":
-  version: 0.148.0
-  resolution: "three@npm:0.148.0"
-  checksum: 9cc20c26cc5821715b15f17e4a15d8f2dbee03470941eb0965e3595a9d813f9d34b8e32bb3aa6bc87cc298ba7000dadd9527fae03c5be3c9ba8747def9f5bfbd
+"three@npm:^0.149.0":
+  version: 0.149.0
+  resolution: "three@npm:0.149.0"
+  checksum: 8f5a294ac7717de401cf0cf9cfabb1552d5c20426af0a2dab54e5d1b9297bc7065479c05ba9b4d18b81a8fd831b456ec6a4f5ad0a7a8ce951e6230b8f39cb808
   languageName: node
   linkType: hard
 
