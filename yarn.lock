@@ -1949,7 +1949,7 @@ __metadata:
     "@buncho/storybook-preset": "npm:^6.0.5"
     "@kerno/cubism": "workspace:^"
     "@neetly/tsconfig": "npm:^0.2.0"
-    "@pixi/app": "npm:^7.1.1"
+    "@pixi/app": "npm:^7.1.2"
     "@pixi/core": "npm:^7.1.2"
     "@pixi/display": "npm:^7.1.2"
     "@storybook/addon-essentials": "npm:7.0.0-beta.40"
@@ -2114,10 +2114,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pixi/app@npm:^7.1.1":
-  version: 7.1.1
-  resolution: "@pixi/app@npm:7.1.1"
-  checksum: 658ebc76c7b3220d03ca45634edfc6ca0cb292175fea576f9f110908439b35c2f071df03fce3e7d54d522525a090279d9e8376ed6fa9a54d02c8c9e3ffee7277
+"@pixi/app@npm:^7.1.2":
+  version: 7.1.2
+  resolution: "@pixi/app@npm:7.1.2"
+  checksum: faa5b2b39419a0fc03b160a2456d5c160436fa1a442e103ec137d15bb9dde9cde78e8aefc238c55a02b3a0f15f8a9567c7fa99e3d32d9e34d76fdf4d763f5976
   languageName: node
   linkType: hard
 
