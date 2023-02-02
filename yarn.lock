@@ -1935,7 +1935,7 @@ __metadata:
   dependencies:
     "@kerno/cubism-core": "workspace:^"
     "@neetly/tsconfig": "npm:^0.2.0"
-    "@types/three": "npm:^0.148.1"
+    "@types/three": "npm:^0.149.0"
     buncho: "npm:^6.0.5"
     three: "npm:^0.149.0"
     typescript: "npm:^4.9.4"
@@ -3716,12 +3716,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/three@npm:^0.148.1":
-  version: 0.148.1
-  resolution: "@types/three@npm:0.148.1"
+"@types/three@npm:^0.149.0":
+  version: 0.149.0
+  resolution: "@types/three@npm:0.149.0"
   dependencies:
     "@types/webxr": "npm:*"
-  checksum: 8bb3ad2d368f4a2d7ceb0b01bf98b97bb13edb7886dae8b098546eb8068efccc77b9feb95ee8df3533ec51d9e6d376be8b4e0e1470665e855643200920356fa3
+  checksum: a30bddbf85d99e8b92b16c13791a9130a27f532c0ba1bd5eac39fcc1e89905d6fe7925e2c0fee9322aa9197d23d03ec958d13dcbf0030ecc6e6d3915aba629e1
   languageName: node
   linkType: hard
 
