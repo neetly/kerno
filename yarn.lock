@@ -1951,7 +1951,7 @@ __metadata:
     "@neetly/tsconfig": "npm:^0.2.0"
     "@pixi/app": "npm:^7.1.1"
     "@pixi/core": "npm:^7.1.2"
-    "@pixi/display": "npm:^7.1.1"
+    "@pixi/display": "npm:^7.1.2"
     "@storybook/addon-essentials": "npm:7.0.0-beta.40"
     "@storybook/react": "npm:7.0.0-beta.40"
     "@storybook/react-webpack5": "npm:7.0.0-beta.40"
@@ -2144,10 +2144,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pixi/display@npm:^7.1.1":
-  version: 7.1.1
-  resolution: "@pixi/display@npm:7.1.1"
-  checksum: 248f7699be13522d41b90137fe08a4bf36bd85de6bb3d5f047b144a04f8227d179238c543f6fbfaccd1f61c3c8778a846af2f08c69cb1934c0042e745f6a0bb0
+"@pixi/display@npm:^7.1.2":
+  version: 7.1.2
+  resolution: "@pixi/display@npm:7.1.2"
+  checksum: 05cda4cd6fcd81042ae3cd413a606962d5915c2718e6d78a3cec26556835c499598e8855805e11b4227df760b3e76e5ea9866ce139c6f962b005acf7ed4b449e
   languageName: node
   linkType: hard
 
