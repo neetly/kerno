@@ -2,10 +2,12 @@ import { type CubismCoreDrawables, CubismCoreUtils } from "@kerno/cubism-core";
 import { Box2, Vector2 } from "three";
 
 import { CubismBlendMode } from "./CubismBlendMode";
+import type { CubismPart } from "./CubismPart";
 
 const point = new Vector2();
 
 class CubismMesh {
+  parentPart: CubismPart | null = null;
   readonly maskMeshes: CubismMesh[] = [];
 
   private isBoundingBoxDirty = true;
@@ -22,7 +24,11 @@ class CubismMesh {
   }
 
   get opacity() {
-    return this.drawables.opacities[this.index]!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+    let opacity = this.drawables.opacities[this.index]!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+    if (this.parentPart) {
+      opacity *= this.parentPart.opacity;
+    }
+    return opacity;
   }
 
   get isCulling() {
@@ -66,6 +72,10 @@ class CubismMesh {
 
   get textureCoords() {
     return this.drawables.vertexUvs[this.index]!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+  }
+
+  get parentPartIndex() {
+    return this.drawables.parentPartIndices[this.index]!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
   }
 
   get maskMeshIndices() {

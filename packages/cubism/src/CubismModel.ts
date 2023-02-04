@@ -5,6 +5,7 @@ import { CubismMesh } from "./CubismMesh";
 import type { CubismModelMoc } from "./CubismModelMoc";
 import type { CubismModelTexture } from "./CubismModelTexture";
 import { CubismParameter } from "./CubismParameter";
+import { CubismPart } from "./CubismPart";
 
 class CubismModel {
   static from({
@@ -21,6 +22,7 @@ class CubismModel {
   readonly unitSize: number;
   readonly boundingBox: Box2;
   readonly parameters: ReadonlyMap<string, CubismParameter>;
+  readonly parts: readonly CubismPart[];
   readonly meshes: readonly CubismMesh[];
 
   private constructor(
@@ -46,6 +48,18 @@ class CubismModel {
     }
     this.parameters = parameters;
 
+    const parts: CubismPart[] = [];
+    for (let index = 0; index < this.core.parts.count; index++) {
+      parts.push(new CubismPart(this.core.parts, index));
+    }
+    this.parts = parts;
+
+    for (const part of this.parts) {
+      if (part.parentPartIndex !== -1) {
+        part.parentPart = this.parts[part.parentPartIndex]!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+      }
+    }
+
     const meshes: CubismMesh[] = [];
     for (let index = 0; index < this.core.drawables.count; index++) {
       meshes.push(new CubismMesh(this.core.drawables, index));
@@ -53,6 +67,9 @@ class CubismModel {
     this.meshes = meshes;
 
     for (const mesh of this.meshes) {
+      if (mesh.parentPartIndex !== -1) {
+        mesh.parentPart = this.parts[mesh.parentPartIndex]!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+      }
       for (const index of mesh.maskMeshIndices) {
         if (index !== -1) {
           mesh.maskMeshes.push(this.meshes[index]!); // eslint-disable-line @typescript-eslint/no-non-null-assertion
