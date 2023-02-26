@@ -1957,7 +1957,7 @@ __metadata:
     "@kerno/cubism": "workspace:^"
     "@neetly/tsconfig": "npm:^0.2.0"
     "@pixi/app": "npm:^7.1.2"
-    "@pixi/core": "npm:^7.1.2"
+    "@pixi/core": "npm:^7.1.3"
     "@pixi/display": "npm:^7.1.2"
     "@storybook/addon-essentials": "npm:7.0.0-beta.54"
     "@storybook/react": "npm:7.0.0-beta.54"
@@ -2128,26 +2128,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pixi/constants@npm:7.1.2":
-  version: 7.1.2
-  resolution: "@pixi/constants@npm:7.1.2"
-  checksum: 8c294bb758d00373f9abca3d363658cbd251004ba90798d64dc641810c4f78d290332d456c0455dedc4e6a5df7b58a63a11286e35278c15776c446ce78c498e4
+"@pixi/constants@npm:7.1.3":
+  version: 7.1.3
+  resolution: "@pixi/constants@npm:7.1.3"
+  checksum: 04586fd81350ada0763c0693098a9d038e2213ca7b7bf38ac4d26cfa23527298bb093617bb92337e047530d07d18538b5ba4742c18f3d5aef92d3b28ab81ab9a
   languageName: node
   linkType: hard
 
-"@pixi/core@npm:^7.1.2":
-  version: 7.1.2
-  resolution: "@pixi/core@npm:7.1.2"
+"@pixi/core@npm:^7.1.3":
+  version: 7.1.3
+  resolution: "@pixi/core@npm:7.1.3"
   dependencies:
-    "@pixi/constants": "npm:7.1.2"
-    "@pixi/extensions": "npm:7.1.2"
-    "@pixi/math": "npm:7.1.2"
-    "@pixi/runner": "npm:7.1.2"
-    "@pixi/settings": "npm:7.1.2"
-    "@pixi/ticker": "npm:7.1.2"
-    "@pixi/utils": "npm:7.1.2"
+    "@pixi/constants": "npm:7.1.3"
+    "@pixi/extensions": "npm:7.1.3"
+    "@pixi/math": "npm:7.1.3"
+    "@pixi/runner": "npm:7.1.3"
+    "@pixi/settings": "npm:7.1.3"
+    "@pixi/ticker": "npm:7.1.3"
+    "@pixi/utils": "npm:7.1.3"
     "@types/offscreencanvas": "npm:^2019.6.4"
-  checksum: e637c0a658d7a2f4acd4dc227e14ddc5f026cd013622b9fffc78d894fabefdfaf0e3398c9d4d1576bd32e1652e63eeb3016971cae49e4502afbc2f7f667c9e6f
+  checksum: eee238355776df37e55d9f74b6b86da1f37da5e2b083862f099e57527dcf7c465a547e5b4aef98fa6bd03e2a4f237debc5e0f37fe74b99c23d28f39ddd169d5a
   languageName: node
   linkType: hard
 
@@ -2158,59 +2158,59 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pixi/extensions@npm:7.1.2":
-  version: 7.1.2
-  resolution: "@pixi/extensions@npm:7.1.2"
-  checksum: 97b8ff800e9fc4d810d4eb3860c1eb22cc56103810c27726cf72d678a3525188593885932cb22a0e2e07a3ddd0fc83a55dfa59fe1ca707304267c9e5e3137448
+"@pixi/extensions@npm:7.1.3":
+  version: 7.1.3
+  resolution: "@pixi/extensions@npm:7.1.3"
+  checksum: 8d6b0117b45bad98d3f94abf440d87f340f2200bed1c80dfb11a8d432b0a44d8a0673d3a338508a387ec6ce359ab51c0a5e89418683c12207e0deb07e58594c1
   languageName: node
   linkType: hard
 
-"@pixi/math@npm:7.1.2":
-  version: 7.1.2
-  resolution: "@pixi/math@npm:7.1.2"
-  checksum: da9a0412c94cc7c45c7eca35f718e5ba04e1baf639ea5accb08b7b0bcae53a35ed6d9fb655cd73508969772c9b1d16cbef11ba1b18fa2fb5421b173932922744
+"@pixi/math@npm:7.1.3":
+  version: 7.1.3
+  resolution: "@pixi/math@npm:7.1.3"
+  checksum: 862f46ebf9f7555ee1f28aee221795dbb71e4967a3364ea6550493c3c9d0ee364c72da8935a65389215801e1b8035279f89c6ede64f68f78a328c69e34642997
   languageName: node
   linkType: hard
 
-"@pixi/runner@npm:7.1.2":
-  version: 7.1.2
-  resolution: "@pixi/runner@npm:7.1.2"
-  checksum: a7dcf11f415c6e6f61ee4720072fdc609fc82cdea3a29bb98685c852f8d7dfdeae88f4588850c176058115b939ac0ac941f4548dcf7d5aad321e13724fb0752a
+"@pixi/runner@npm:7.1.3":
+  version: 7.1.3
+  resolution: "@pixi/runner@npm:7.1.3"
+  checksum: 36d76181caca3f7ec4631c2f088c53cfce2b529f23129da16ffa05945e41964e3db640d53827a142a96484f8395b37801f420c28e761fc8cfd82c8bee67ccc31
   languageName: node
   linkType: hard
 
-"@pixi/settings@npm:7.1.2":
-  version: 7.1.2
-  resolution: "@pixi/settings@npm:7.1.2"
+"@pixi/settings@npm:7.1.3":
+  version: 7.1.3
+  resolution: "@pixi/settings@npm:7.1.3"
   dependencies:
-    "@pixi/constants": "npm:7.1.2"
+    "@pixi/constants": "npm:7.1.3"
     "@types/css-font-loading-module": "npm:^0.0.7"
-  checksum: cbb3eeb31e1878bdaf236dffa68c79bc23e0c39e08c95807f6c09accae391d24864bc554cd1fb092cb36636dde30b991afe41ae99877acd6a4e035233acd535e
+  checksum: a2abb53a3524f84eb7bdde8e71eeca86009534fe2996143af27041db7adb48b02611f28eecd3e2400e27958421dc9dd3e02c7a6411d7fc3fde835d5205a8a700
   languageName: node
   linkType: hard
 
-"@pixi/ticker@npm:7.1.2":
-  version: 7.1.2
-  resolution: "@pixi/ticker@npm:7.1.2"
+"@pixi/ticker@npm:7.1.3":
+  version: 7.1.3
+  resolution: "@pixi/ticker@npm:7.1.3"
   dependencies:
-    "@pixi/extensions": "npm:7.1.2"
-    "@pixi/settings": "npm:7.1.2"
-    "@pixi/utils": "npm:7.1.2"
-  checksum: d01c24eb309ffa3f3ad5dcd2b1f37a0cdad261f486c39136cb5094f61374d9b8ee5402538ee78d327e0760e215614847ee6f06ff149a15afc5ccf5e8c5efbb73
+    "@pixi/extensions": "npm:7.1.3"
+    "@pixi/settings": "npm:7.1.3"
+    "@pixi/utils": "npm:7.1.3"
+  checksum: d026cd33713451fddb5032fe058ca325e2656512bed1d44e6ba9627b06f15e5905369c0ca3dd89d79f1e9b1eadf96d6311fa6987eb4245f8e5a7dfdde9812a61
   languageName: node
   linkType: hard
 
-"@pixi/utils@npm:7.1.2":
-  version: 7.1.2
-  resolution: "@pixi/utils@npm:7.1.2"
+"@pixi/utils@npm:7.1.3":
+  version: 7.1.3
+  resolution: "@pixi/utils@npm:7.1.3"
   dependencies:
-    "@pixi/constants": "npm:7.1.2"
-    "@pixi/settings": "npm:7.1.2"
+    "@pixi/constants": "npm:7.1.3"
+    "@pixi/settings": "npm:7.1.3"
     "@types/earcut": "npm:^2.1.0"
     earcut: "npm:^2.2.4"
     eventemitter3: "npm:^4.0.0"
     url: "npm:^0.11.0"
-  checksum: 48337b81456ead19f0e747673c20cc07daa781779e58e80b269761564a026f697d31e88711e6a5f45f32776347b988292d2a3f8c60d67511bd25554f081bc5d7
+  checksum: 49bc16bc9c93d05f9d7492baca98aed45ed2fb5d51d35a3a925ce1cb9c445410f8aa841bc38ff0ee6cd758536b434e6a1977b5bf4dc115e0bcbfa0ba885f46fc
   languageName: node
   linkType: hard
 
