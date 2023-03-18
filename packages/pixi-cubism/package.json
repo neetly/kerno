@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@buncho/storybook-preset": "^6.0.5",
-    "@neetly/tsconfig": "^0.2.0",
+    "@neetly/tsconfig": "^0.3.0",
     "@pixi/app": "^7.1.4",
     "@pixi/core": "^7.1.4",
     "@pixi/display": "^7.1.4",
