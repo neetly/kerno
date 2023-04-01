@@ -1957,9 +1957,9 @@ __metadata:
   dependencies:
     "@kerno/cubism-core": "workspace:^"
     "@neetly/tsconfig": "npm:^0.3.0"
-    "@types/three": "npm:^0.149.0"
+    "@types/three": "npm:^0.150.0"
     buncho: "npm:^6.0.5"
-    three: "npm:^0.150.1"
+    three: "npm:^0.151.2"
     typescript: "npm:^5.0.3"
   languageName: unknown
   linkType: soft
@@ -3771,12 +3771,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/three@npm:^0.149.0":
-  version: 0.149.0
-  resolution: "@types/three@npm:0.149.0"
+"@types/stats.js@npm:*":
+  version: 0.17.0
+  resolution: "@types/stats.js@npm:0.17.0"
+  checksum: df23d1845d24a22d37438862ae94d61541092d85a52444871bcfa0ff28006986ac307bfaa7a52e7c6aa8f8088b44de93d6002ae732457d72a880c8250bdbc05e
+  languageName: node
+  linkType: hard
+
+"@types/three@npm:^0.150.0":
+  version: 0.150.0
+  resolution: "@types/three@npm:0.150.0"
   dependencies:
+    "@types/stats.js": "npm:*"
     "@types/webxr": "npm:*"
-  checksum: a30bddbf85d99e8b92b16c13791a9130a27f532c0ba1bd5eac39fcc1e89905d6fe7925e2c0fee9322aa9197d23d03ec958d13dcbf0030ecc6e6d3915aba629e1
+    fflate: "npm:~0.6.9"
+    lil-gui: "npm:~0.17.0"
+  checksum: dfe9332e17dc1bc53e264a99f6da4d953fa3ec4e0a760630186bf0aecfff04519d7fd0167a98d4f513ebb55740dcdbec62e5f0892f988184819d40ca91727f8d
   languageName: node
   linkType: hard
 
@@ -6987,6 +6997,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fflate@npm:~0.6.9":
+  version: 0.6.10
+  resolution: "fflate@npm:0.6.10"
+  checksum: 338ad53a5233d8b07cce428ca4e303d9fdcb953ef6fc573c7fc690aad455bc41d85a0643a916e104f01f94dffaf47fa8a19cca95d58b46b4fe807dae50a265a4
+  languageName: node
+  linkType: hard
+
 "file-entry-cache@npm:^6.0.1":
   version: 6.0.1
   resolution: "file-entry-cache@npm:6.0.1"
@@ -8811,6 +8828,13 @@ __metadata:
     prelude-ls: "npm:~1.1.2"
     type-check: "npm:~0.3.2"
   checksum: ca790d4b61d6ae2357b4e33f5a5da663c403c796f572b90f4fd9f1afd3cd71cf29903905638f81d7c5cb585619ae1d7f959deb0c86802bae02ba37c14a0902a8
+  languageName: node
+  linkType: hard
+
+"lil-gui@npm:~0.17.0":
+  version: 0.17.0
+  resolution: "lil-gui@npm:0.17.0"
+  checksum: bc786d586b54a3bc5073341650bd702d4f422d82cb0c0a9df7dbb4de6acc3029928be33590e72121885c468d2d720a0fd2248c9ec71bc2c3c824349e141e4a46
   languageName: node
   linkType: hard
 
@@ -12106,10 +12130,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"three@npm:^0.150.1":
-  version: 0.150.1
-  resolution: "three@npm:0.150.1"
-  checksum: 335b2fff5cc5729c1a1a0cd97ff1a87f07bce277d1f4a5ea73070d0328e7793938c455ce19d27d8a20a95cc7e4a24d8c77b0fe1f2cfeda7a2b5fbf1ada288f46
+"three@npm:^0.151.2":
+  version: 0.151.2
+  resolution: "three@npm:0.151.2"
+  checksum: 1a19467dbdd84db4d26354ff0285ec8879b1482cdbb3ee85503f40a4303841978295ad1a7f7f0d92cf366fd57255ecb69c0c24df72217ea8040baceb0862cba9
   languageName: node
   linkType: hard
 
