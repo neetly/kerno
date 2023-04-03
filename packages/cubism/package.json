@@ -9,7 +9,7 @@
   "dependencies": {
     "@kerno/cubism-core": "workspace:^",
     "@types/three": "^0.150.1",
-    "three": "^0.151.2"
+    "three": "^0.151.3"
   },
   "devDependencies": {
     "@neetly/tsconfig": "^0.3.0",
