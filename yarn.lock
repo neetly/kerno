@@ -2002,7 +2002,7 @@ __metadata:
     "@neetly/tsconfig": "npm:^0.3.0"
     "@pixi/app": "npm:^7.2.3"
     "@pixi/core": "npm:^7.2.3"
-    "@pixi/display": "npm:^7.2.3"
+    "@pixi/display": "npm:^7.2.4"
     "@storybook/addon-essentials": "npm:^7.0.2"
     "@storybook/react": "npm:^7.0.2"
     "@storybook/react-webpack5": "npm:^7.0.2"
@@ -2220,12 +2220,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pixi/display@npm:^7.2.3":
-  version: 7.2.3
-  resolution: "@pixi/display@npm:7.2.3"
+"@pixi/display@npm:^7.2.4":
+  version: 7.2.4
+  resolution: "@pixi/display@npm:7.2.4"
   peerDependencies:
-    "@pixi/core": 7.2.3
-  checksum: 80f4d834d222d88c80e030d1b02e9349695fcd03e20940aaf085faa19e177751e80d662871159ff9e9d4c1d9e29b08685128274bc34af22fb6cfc5f98e563459
+    "@pixi/core": 7.2.4
+  checksum: 3af13ec79d9baa8f9d95fb4f05fafdef0747e9a1ad2c869c30fe5dd11a8106ecf7a70f4555c82568a866914f6f345539a28c8585f93588721b81579c0b375f7d
   languageName: node
   linkType: hard
 

@@ -19,7 +19,7 @@
     "@neetly/tsconfig": "^0.3.0",
     "@pixi/app": "^7.2.3",
     "@pixi/core": "^7.2.3",
-    "@pixi/display": "^7.2.3",
+    "@pixi/display": "^7.2.4",
     "@storybook/addon-essentials": "^7.0.2",
     "@storybook/react": "^7.0.2",
     "@storybook/react-webpack5": "^7.0.2",
