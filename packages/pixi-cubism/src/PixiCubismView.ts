@@ -1,5 +1,5 @@
 import { type CubismModel, CubismRenderer } from "@kerno/cubism";
-import { type Renderer, Matrix } from "@pixi/core";
+import { Matrix, type Renderer } from "@pixi/core";
 import { Container as PixiContainer } from "@pixi/display";
 
 const matrix = new Matrix();
