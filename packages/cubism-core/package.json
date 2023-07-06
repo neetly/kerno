@@ -10,7 +10,7 @@
     "live2d-cubism-core": "link:../../third-party/live2d-cubism-core"
   },
   "devDependencies": {
-    "@neetly/codegen-utils": "^0.1.0",
+    "@neetly/codegen-utils": "^0.2.0",
     "@neetly/tsconfig": "^0.3.0",
     "buncho": "^6.1.0",
     "prettier": "^3.0.0",
