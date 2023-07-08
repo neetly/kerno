@@ -2025,7 +2025,7 @@ __metadata:
   dependencies:
     "@kerno/cubism-core": "workspace:^"
     "@neetly/tsconfig": "npm:^0.3.0"
-    "@types/three": "npm:^0.152.1"
+    "@types/three": "npm:^0.153.0"
     buncho: "npm:^6.1.0"
     three: "npm:^0.154.0"
     typescript: "npm:^5.1.6"
@@ -3861,16 +3861,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/three@npm:^0.152.1":
-  version: 0.152.1
-  resolution: "@types/three@npm:0.152.1"
+"@types/three@npm:^0.153.0":
+  version: 0.153.0
+  resolution: "@types/three@npm:0.153.0"
   dependencies:
     "@tweenjs/tween.js": "npm:~18.6.4"
     "@types/stats.js": "npm:*"
     "@types/webxr": "npm:*"
     fflate: "npm:~0.6.9"
     lil-gui: "npm:~0.17.0"
-  checksum: 9/70e7319788d9a4671173ceb7a422e296f13c278d96016a03142aebae83e0940f6d5253b3f2d173841474751409b84c84c8e2b7d21beacd0e74bde4ae78aa6323
+  checksum: 6c08e05ab935f75fe3eaad5a6c348caf9cbe21d4b123289ed5851a47f1ce07fe6b579fe73290ae4bb6dc6e10d2e3b6895c5f796bb4a8d9c3c5c366ab74b78ca9
   languageName: node
   linkType: hard
 
