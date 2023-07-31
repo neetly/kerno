@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@kerno/cubism-core": "workspace:^",
-    "@types/three": "^0.154.0",
+    "@types/three": "^0.155.0",
     "three": "^0.155.0"
   },
   "devDependencies": {
