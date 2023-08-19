@@ -6,8 +6,8 @@
     "./websites/*"
   ],
   "scripts": {
-    "build": "yarn workspaces foreach --topological-dev run build",
-    "clean": "yarn workspaces foreach --topological-dev run clean",
+    "build": "yarn workspaces foreach --all --topological-dev run build",
+    "clean": "yarn workspaces foreach --all --topological-dev run clean",
     "lint": "eslint --max-warnings 0 . && prettier --check .",
     "lint:fix": "eslint --max-warnings 0 --fix . && prettier --write ."
   },
