@@ -11,7 +11,10 @@ export const Default: StoryObj<typeof PixiCubismDemo> = {
   args: {
     factory: await CubismModelFactory.createFromURL({
       fileName: "Hiyori.model3.json",
-      baseURL: new URL("/models/Hiyori/", document.baseURI),
+      baseURL: new URL(
+        "/third-party/live2d-cubism-models/Hiyori/",
+        document.baseURI,
+      ),
     }),
   },
 };

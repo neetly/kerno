@@ -15,7 +15,5 @@
 # Third-Party
 
 /third-party/
-/packages/*/public/live2dcubismcore.min.js
-/packages/*/public/models/
-/websites/*/public/live2dcubismcore.min.js
-/websites/*/public/models/
+/packages/*/public/third-party/
+/websites/*/public/third-party/
