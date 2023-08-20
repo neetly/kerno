@@ -6,4 +6,4 @@ interface CubismModelManifestData {
   };
 }
 
-export type { CubismModelManifestData };
+export { type CubismModelManifestData };
