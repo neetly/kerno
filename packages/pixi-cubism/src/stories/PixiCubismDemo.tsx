@@ -4,11 +4,11 @@ import { useEffect, useRef } from "react";
 
 import { PixiCubismView } from "../PixiCubismView";
 
-type PixiCubismDemoProps = {
+interface PixiCubismDemoProps {
   factory: CubismModelFactory;
   width?: number;
   height?: number;
-};
+}
 
 const PixiCubismDemo = ({
   factory,

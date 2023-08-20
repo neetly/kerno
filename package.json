@@ -12,7 +12,7 @@
     "lint:fix": "eslint --max-warnings 0 --fix . && prettier --write ."
   },
   "devDependencies": {
-    "@neetly/eslint-config": "^0.5.1",
+    "@neetly/eslint-config": "^0.7.0",
     "@neetly/tsconfig": "^0.3.0",
     "@prettier/plugin-xml": "^3.2.0",
     "eslint": "^8.47.0",

@@ -19,7 +19,9 @@ class CubismModelFactory {
     const moc = CubismModelMoc.from(await loadFileData(manifest.mocFileName));
     const textures = await Promise.all(
       manifest.textureFileNames.map(async (textureFileName) => {
-        return CubismModelTexture.from(await loadFileData(textureFileName));
+        return await CubismModelTexture.from(
+          await loadFileData(textureFileName),
+        );
       }),
     );
     return new CubismModelFactory(moc, textures);
@@ -32,14 +34,14 @@ class CubismModelFactory {
     fileName: string;
     baseURL: string | URL;
   }) {
-    return CubismModelFactory.create({
+    return await CubismModelFactory.create({
       fileName,
       loadFileData: async (fileName) => {
         const response = await fetch(new URL(fileName, baseURL));
         if (!response.ok) {
           throw new CubismError(`Cannot load file "${fileName}".`);
         }
-        return response.arrayBuffer();
+        return await response.arrayBuffer();
       },
     });
   }

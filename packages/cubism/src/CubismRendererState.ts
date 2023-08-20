@@ -1,11 +1,11 @@
 const map = new WeakMap<WebGL2RenderingContext, CubismRendererState>();
 
-type Viewport = {
+interface Viewport {
   x: number;
   y: number;
   width: number;
   height: number;
-};
+}
 
 class CubismRendererState {
   static of(gl: WebGL2RenderingContext) {
