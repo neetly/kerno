@@ -44,4 +44,4 @@ const PixiCubismDemo = ({
   return <canvas ref={ref} />;
 };
 
-export { PixiCubismDemo };
+export { PixiCubismDemo, type PixiCubismDemoProps };
