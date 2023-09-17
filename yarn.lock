@@ -2147,9 +2147,9 @@ __metadata:
   dependencies:
     "@kerno/cubism-core": "workspace:^"
     "@neetly/tsconfig": "npm:^0.3.0"
-    "@types/three": "npm:^0.155.0"
+    "@types/three": "npm:^0.156.0"
     buncho: "npm:^6.2.0"
-    three: "npm:^0.155.0"
+    three: "npm:^0.156.1"
     typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
@@ -4166,13 +4166,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tweenjs/tween.js@npm:~18.6.4":
-  version: 18.6.4
-  resolution: "@tweenjs/tween.js@npm:18.6.4"
-  checksum: 4fc9be51e2d48f1900b62acffbcf0dbe9d4b214a0cde06e6d2482695e8121ba80b066e20fc302bd14ef3ce1eb6e6aa6e7e27fd27d6ceed6589ce44b62b0d6e41
-  languageName: node
-  linkType: hard
-
 "@types/babel__core@npm:^7.0.0":
   version: 7.20.0
   resolution: "@types/babel__core@npm:7.20.0"
@@ -4622,17 +4615,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/three@npm:^0.155.0":
-  version: 0.155.0
-  resolution: "@types/three@npm:0.155.0"
+"@types/three@npm:^0.156.0":
+  version: 0.156.0
+  resolution: "@types/three@npm:0.156.0"
   dependencies:
-    "@tweenjs/tween.js": "npm:~18.6.4"
     "@types/stats.js": "npm:*"
     "@types/webxr": "npm:*"
-    fflate: "npm:~0.6.9"
-    lil-gui: "npm:~0.17.0"
+    fflate: "npm:~0.6.10"
     meshoptimizer: "npm:~0.18.1"
-  checksum: 9fa7db5d0c16956b7a693d8936a3e835ba9c7707f3ede1472ecbbc8a44d5d920b14255476b9c88150a673843e65b6d911c7456034bdecc44114ff1672a94a177
+  checksum: a1b3f6ede6022dd8d2599b09a1f7af6fd09704ebfbf17023e6e17c246c5f68ae972167c85f202eaa2e16da7dc3dee07e1c304476e302273b072f43cc6df322ff
   languageName: node
   linkType: hard
 
@@ -8050,7 +8041,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fflate@npm:~0.6.9":
+"fflate@npm:~0.6.10":
   version: 0.6.10
   resolution: "fflate@npm:0.6.10"
   checksum: c452f720e4cb404b300fceb8ef0bdf345f18fbfd3f57f7d0974dce5f5e2ac0e8dd4b6ff4bb7061ae74fd919b9c707172f9dbd44d91149b1137199b8c705768f1
@@ -9940,13 +9931,6 @@ __metadata:
     prelude-ls: "npm:^1.2.1"
     type-check: "npm:~0.4.0"
   checksum: effb03cad7c89dfa5bd4f6989364bfc79994c2042ec5966cb9b95990e2edee5cd8969ddf42616a0373ac49fac1403437deaf6e9050fbbaa3546093a59b9ac94e
-  languageName: node
-  linkType: hard
-
-"lil-gui@npm:~0.17.0":
-  version: 0.17.0
-  resolution: "lil-gui@npm:0.17.0"
-  checksum: 889109145323be8496ac19b606b855447d33f937c6c2ad5c6730ca0e3333d1dcd2a9528c98d3e02fe54fdf946c582574a268a41b6fb599eccfcba740c4a84a44
   languageName: node
   linkType: hard
 
@@ -13403,10 +13387,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"three@npm:^0.155.0":
-  version: 0.155.0
-  resolution: "three@npm:0.155.0"
-  checksum: 92da42b94bf495e05f6f0019a6eae32ea3074da6072eb36efa90748f6fa8afc5943d68180b0e5a933b7fd1b35a0cd78bab17bfff2978f4f0e357a150690d162f
+"three@npm:^0.156.1":
+  version: 0.156.1
+  resolution: "three@npm:0.156.1"
+  checksum: e1f8c5e1a1f4c9b431279c3b9875cbd64b2456c2031116543583320192873042d18e7c1255edb9f9b167796ae338e08e9185cfdd29c3fc721e37bb35cfd6b118
   languageName: node
   linkType: hard
 
