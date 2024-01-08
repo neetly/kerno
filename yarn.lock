@@ -1563,7 +1563,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@buncho/storybook-preset@npm:^6.2.0":
+"@buncho/storybook-preset@npm:6.2.0":
   version: 6.2.0
   resolution: "@buncho/storybook-preset@npm:6.2.0"
   dependencies:
@@ -2054,13 +2054,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@kerno/app@workspace:websites/app"
   dependencies:
-    "@neetly/tsconfig": "npm:^0.3.0"
-    "@types/react": "npm:^18.2.47"
-    "@types/react-dom": "npm:^18.2.18"
-    buncho: "npm:^6.2.0"
-    react: "npm:^18.2.0"
-    react-dom: "npm:^18.2.0"
-    typescript: "npm:^5.3.3"
+    "@neetly/tsconfig": "npm:0.3.0"
+    "@types/react": "npm:18.2.47"
+    "@types/react-dom": "npm:18.2.18"
+    buncho: "npm:6.2.0"
+    react: "npm:18.2.0"
+    react-dom: "npm:18.2.0"
+    typescript: "npm:5.3.3"
   languageName: unknown
   linkType: soft
 
@@ -2068,12 +2068,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@kerno/cubism-core@workspace:packages/cubism-core"
   dependencies:
-    "@neetly/codegen-utils": "npm:^0.2.0"
-    "@neetly/tsconfig": "npm:^0.3.0"
-    buncho: "npm:^6.2.0"
+    "@neetly/codegen-utils": "npm:0.2.0"
+    "@neetly/tsconfig": "npm:0.3.0"
+    buncho: "npm:6.2.0"
     live2d-cubism-core: "link:../../third-party/live2d-cubism-core"
-    prettier: "npm:^3.1.1"
-    typescript: "npm:^5.3.3"
+    prettier: "npm:3.1.1"
+    typescript: "npm:5.3.3"
   languageName: unknown
   linkType: soft
 
@@ -2082,11 +2082,11 @@ __metadata:
   resolution: "@kerno/cubism@workspace:packages/cubism"
   dependencies:
     "@kerno/cubism-core": "workspace:^"
-    "@neetly/tsconfig": "npm:^0.3.0"
-    "@types/three": "npm:^0.160.0"
-    buncho: "npm:^6.2.0"
-    three: "npm:^0.160.0"
-    typescript: "npm:^5.3.3"
+    "@neetly/tsconfig": "npm:0.3.0"
+    "@types/three": "npm:0.160.0"
+    buncho: "npm:6.2.0"
+    three: "npm:0.160.0"
+    typescript: "npm:5.3.3"
   languageName: unknown
   linkType: soft
 
@@ -2094,22 +2094,22 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@kerno/pixi-cubism@workspace:packages/pixi-cubism"
   dependencies:
-    "@buncho/storybook-preset": "npm:^6.2.0"
+    "@buncho/storybook-preset": "npm:6.2.0"
     "@kerno/cubism": "workspace:^"
-    "@neetly/tsconfig": "npm:^0.3.0"
-    "@pixi/app": "npm:^7.3.3"
-    "@pixi/core": "npm:^7.3.3"
-    "@pixi/display": "npm:^7.3.3"
-    "@storybook/addon-essentials": "npm:^7.6.7"
-    "@storybook/react": "npm:^7.6.7"
-    "@storybook/react-webpack5": "npm:^7.6.7"
-    "@types/react": "npm:^18.2.47"
-    "@types/react-dom": "npm:^18.2.18"
-    buncho: "npm:^6.2.0"
-    react: "npm:^18.2.0"
-    react-dom: "npm:^18.2.0"
-    storybook: "npm:^7.6.7"
-    typescript: "npm:^5.3.3"
+    "@neetly/tsconfig": "npm:0.3.0"
+    "@pixi/app": "npm:7.3.3"
+    "@pixi/core": "npm:7.3.3"
+    "@pixi/display": "npm:7.3.3"
+    "@storybook/addon-essentials": "npm:7.6.7"
+    "@storybook/react": "npm:7.6.7"
+    "@storybook/react-webpack5": "npm:7.6.7"
+    "@types/react": "npm:18.2.47"
+    "@types/react-dom": "npm:18.2.18"
+    buncho: "npm:6.2.0"
+    react: "npm:18.2.0"
+    react-dom: "npm:18.2.0"
+    storybook: "npm:7.6.7"
+    typescript: "npm:5.3.3"
   peerDependencies:
     "@pixi/core": "*"
     "@pixi/display": "*"
@@ -2120,12 +2120,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@kerno/repo@workspace:."
   dependencies:
-    "@neetly/eslint-config": "npm:^0.7.0"
-    "@neetly/tsconfig": "npm:^0.3.0"
-    "@prettier/plugin-xml": "npm:^3.2.2"
-    eslint: "npm:^8.56.0"
-    prettier: "npm:^3.1.1"
-    typescript: "npm:^5.3.3"
+    "@neetly/eslint-config": "npm:0.7.0"
+    "@neetly/tsconfig": "npm:0.3.0"
+    "@prettier/plugin-xml": "npm:3.2.2"
+    eslint: "npm:8.56.0"
+    prettier: "npm:3.1.1"
+    typescript: "npm:5.3.3"
   languageName: unknown
   linkType: soft
 
@@ -2173,7 +2173,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@neetly/codegen-utils@npm:^0.2.0":
+"@neetly/codegen-utils@npm:0.2.0":
   version: 0.2.0
   resolution: "@neetly/codegen-utils@npm:0.2.0"
   dependencies:
@@ -2190,7 +2190,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@neetly/eslint-config@npm:^0.7.0":
+"@neetly/eslint-config@npm:0.7.0":
   version: 0.7.0
   resolution: "@neetly/eslint-config@npm:0.7.0"
   dependencies:
@@ -2212,7 +2212,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@neetly/tsconfig@npm:^0.3.0":
+"@neetly/tsconfig@npm:0.3.0":
   version: 0.3.0
   resolution: "@neetly/tsconfig@npm:0.3.0"
   peerDependencies:
@@ -2277,7 +2277,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pixi/app@npm:^7.3.3":
+"@pixi/app@npm:7.3.3":
   version: 7.3.3
   resolution: "@pixi/app@npm:7.3.3"
   peerDependencies:
@@ -2310,7 +2310,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pixi/core@npm:^7.3.3":
+"@pixi/core@npm:7.3.3":
   version: 7.3.3
   resolution: "@pixi/core@npm:7.3.3"
   dependencies:
@@ -2327,7 +2327,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pixi/display@npm:^7.3.3":
+"@pixi/display@npm:7.3.3":
   version: 7.3.3
   resolution: "@pixi/display@npm:7.3.3"
   peerDependencies:
@@ -2440,7 +2440,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prettier/plugin-xml@npm:^3.2.2":
+"@prettier/plugin-xml@npm:3.2.2":
   version: 3.2.2
   resolution: "@prettier/plugin-xml@npm:3.2.2"
   dependencies:
@@ -3099,7 +3099,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-essentials@npm:^7.6.7":
+"@storybook/addon-essentials@npm:7.6.7":
   version: 7.6.7
   resolution: "@storybook/addon-essentials@npm:7.6.7"
   dependencies:
@@ -3711,7 +3711,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/react-webpack5@npm:^7.6.7":
+"@storybook/react-webpack5@npm:7.6.7":
   version: 7.6.7
   resolution: "@storybook/react-webpack5@npm:7.6.7"
   dependencies:
@@ -3733,7 +3733,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/react@npm:7.6.7, @storybook/react@npm:^7.6.7":
+"@storybook/react@npm:7.6.7":
   version: 7.6.7
   resolution: "@storybook/react@npm:7.6.7"
   dependencies:
@@ -4368,7 +4368,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^18.2.18":
+"@types/react-dom@npm:18.2.18":
   version: 18.2.18
   resolution: "@types/react-dom@npm:18.2.18"
   dependencies:
@@ -4377,7 +4377,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:>=16, @types/react@npm:^18.2.47":
+"@types/react@npm:*, @types/react@npm:18.2.47, @types/react@npm:>=16":
   version: 18.2.47
   resolution: "@types/react@npm:18.2.47"
   dependencies:
@@ -4462,7 +4462,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/three@npm:^0.160.0":
+"@types/three@npm:0.160.0":
   version: 0.160.0
   resolution: "@types/three@npm:0.160.0"
   dependencies:
@@ -5643,7 +5643,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"buncho@npm:^6.2.0":
+"buncho@npm:6.2.0":
   version: 6.2.0
   resolution: "buncho@npm:6.2.0"
   dependencies:
@@ -7454,7 +7454,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.56.0":
+"eslint@npm:8.56.0":
   version: 8.56.0
   resolution: "eslint@npm:8.56.0"
   dependencies:
@@ -11369,21 +11369,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prettier@npm:3.1.1":
+  version: 3.1.1
+  resolution: "prettier@npm:3.1.1"
+  bin:
+    prettier: bin/prettier.cjs
+  checksum: facc944ba20e194ff4db765e830ffbcb642803381f0d2033ed397e79904fa4ccc877dc25ad68f42d36985c01d051c990ca1b905fb83d2d7d65fe69e4386fa1a3
+  languageName: node
+  linkType: hard
+
 "prettier@npm:^2.8.0":
   version: 2.8.8
   resolution: "prettier@npm:2.8.8"
   bin:
     prettier: bin-prettier.js
   checksum: 463ea8f9a0946cd5b828d8cf27bd8b567345cf02f56562d5ecde198b91f47a76b7ac9eae0facd247ace70e927143af6135e8cf411986b8cb8478784a4d6d724a
-  languageName: node
-  linkType: hard
-
-"prettier@npm:^3.1.1":
-  version: 3.1.1
-  resolution: "prettier@npm:3.1.1"
-  bin:
-    prettier: bin/prettier.cjs
-  checksum: facc944ba20e194ff4db765e830ffbcb642803381f0d2033ed397e79904fa4ccc877dc25ad68f42d36985c01d051c990ca1b905fb83d2d7d65fe69e4386fa1a3
   languageName: node
   linkType: hard
 
@@ -11649,7 +11649,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^18.2.0":
+"react-dom@npm:18.2.0":
   version: 18.2.0
   resolution: "react-dom@npm:18.2.0"
   dependencies:
@@ -11748,7 +11748,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^18.2.0":
+"react@npm:18.2.0":
   version: 18.2.0
   resolution: "react@npm:18.2.0"
   dependencies:
@@ -12708,7 +12708,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook@npm:^7.6.7":
+"storybook@npm:7.6.7":
   version: 7.6.7
   resolution: "storybook@npm:7.6.7"
   dependencies:
@@ -13108,7 +13108,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"three@npm:^0.160.0":
+"three@npm:0.160.0":
   version: 0.160.0
   resolution: "three@npm:0.160.0"
   checksum: d78e9605de6f8072e7fbebe36db7741c13f2ae89be15b4421d2fc7d549e216f53cb3e136d98e9424648f19a42345f47f8186478e038f0046655475166c156b0b
@@ -13340,7 +13340,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.3.3":
+"typescript@npm:5.3.3":
   version: 5.3.3
   resolution: "typescript@npm:5.3.3"
   bin:
@@ -13350,7 +13350,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5.3.3#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>":
   version: 5.3.3
   resolution: "typescript@patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"
   bin:
