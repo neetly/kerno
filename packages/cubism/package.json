@@ -8,8 +8,8 @@
   },
   "dependencies": {
     "@kerno/cubism-core": "workspace:^",
-    "@types/three": "0.160.0",
-    "three": "0.160.1"
+    "@types/three": "0.161.2",
+    "three": "0.161.0"
   },
   "devDependencies": {
     "@neetly/tsconfig": "0.3.0",
