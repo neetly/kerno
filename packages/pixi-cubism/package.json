@@ -17,9 +17,9 @@
   "devDependencies": {
     "@buncho/storybook-preset": "6.2.0",
     "@neetly/tsconfig": "0.3.0",
-    "@pixi/app": "7.4.0",
-    "@pixi/core": "7.4.0",
-    "@pixi/display": "7.4.0",
+    "@pixi/app": "7.4.2",
+    "@pixi/core": "7.4.2",
+    "@pixi/display": "7.4.2",
     "@storybook/addon-essentials": "7.6.17",
     "@storybook/react": "7.6.17",
     "@storybook/react-webpack5": "7.6.17",
