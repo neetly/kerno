@@ -2082,9 +2082,9 @@ __metadata:
   dependencies:
     "@kerno/cubism-core": "workspace:^"
     "@neetly/tsconfig": "npm:0.3.0"
-    "@types/three": "npm:0.162.0"
+    "@types/three": "npm:0.163.0"
     buncho: "npm:6.2.0"
-    three: "npm:0.162.0"
+    three: "npm:0.163.0"
     typescript: "npm:5.4.4"
   languageName: unknown
   linkType: soft
@@ -4472,16 +4472,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/three@npm:0.162.0":
-  version: 0.162.0
-  resolution: "@types/three@npm:0.162.0"
+"@types/three@npm:0.163.0":
+  version: 0.163.0
+  resolution: "@types/three@npm:0.163.0"
   dependencies:
     "@tweenjs/tween.js": "npm:~23.1.1"
     "@types/stats.js": "npm:*"
     "@types/webxr": "npm:*"
-    fflate: "npm:~0.6.10"
+    fflate: "npm:~0.8.2"
     meshoptimizer: "npm:~0.18.1"
-  checksum: 10c0/d4817bcb30e83804c20f505fae5a40e3d307a570b25fec65a73366c09859f7e7860cf2bf0757aa7d90f908ae7ed7d710db66b6a7cd638d6869909b4e7dfb7198
+  checksum: 10c0/715406a709bdcf567ba844c598c73dac07b679df942f85c578e82a33d00ae3ac67e8f6a3e030ec75ba0f639d33c65fb7ec6237c11a4a501c98569d99bc67a5b6
   languageName: node
   linkType: hard
 
@@ -7893,10 +7893,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fflate@npm:~0.6.10":
-  version: 0.6.10
-  resolution: "fflate@npm:0.6.10"
-  checksum: 10c0/c452f720e4cb404b300fceb8ef0bdf345f18fbfd3f57f7d0974dce5f5e2ac0e8dd4b6ff4bb7061ae74fd919b9c707172f9dbd44d91149b1137199b8c705768f1
+"fflate@npm:~0.8.2":
+  version: 0.8.2
+  resolution: "fflate@npm:0.8.2"
+  checksum: 10c0/03448d630c0a583abea594835a9fdb2aaf7d67787055a761515bf4ed862913cfd693b4c4ffd5c3f3b355a70cf1e19033e9ae5aedcca103188aaff91b8bd6e293
   languageName: node
   linkType: hard
 
@@ -13282,10 +13282,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"three@npm:0.162.0":
-  version: 0.162.0
-  resolution: "three@npm:0.162.0"
-  checksum: 10c0/ca97c30ecca94defa932ae8cb9423af66cd9b31f2d3c93b902d8b1022caaf322a022e59eca9e4ae0fd09deb03b3614c5f5114163cf9d0efac501bdc27c10445d
+"three@npm:0.163.0":
+  version: 0.163.0
+  resolution: "three@npm:0.163.0"
+  checksum: 10c0/6e38928faa00580259302b7515229ca2a710f05ed4672e1c56f19f30f76d02bac535dcbd8d4ef4445f7a8436ffe5939b0c70d61ea01d4fc7b31c794cbd10bfaf
   languageName: node
   linkType: hard
 
