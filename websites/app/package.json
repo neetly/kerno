@@ -7,10 +7,10 @@
     "clean": "buncho clean"
   },
   "dependencies": {
-    "@types/react": "18.2.74",
-    "@types/react-dom": "18.2.24",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "@types/react": "18.3.11",
+    "@types/react-dom": "18.3.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
     "@neetly/tsconfig": "0.3.0",
