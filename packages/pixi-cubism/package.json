@@ -20,15 +20,15 @@
     "@pixi/app": "7.4.2",
     "@pixi/core": "7.4.2",
     "@pixi/display": "7.4.2",
-    "@storybook/addon-essentials": "7.6.17",
-    "@storybook/react": "7.6.17",
-    "@storybook/react-webpack5": "7.6.17",
+    "@storybook/addon-essentials": "8.3.6",
+    "@storybook/react": "8.3.6",
+    "@storybook/react-webpack5": "8.3.6",
     "@types/react": "18.2.74",
     "@types/react-dom": "18.2.24",
     "buncho": "6.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "storybook": "7.6.17",
+    "storybook": "8.3.6",
     "typescript": "5.4.4"
   }
 }
